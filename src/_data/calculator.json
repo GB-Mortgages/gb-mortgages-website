@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Mortgage calculator",
+  "heading": "Run the numbers before you commit.",
+  "intro": "A quick guide for your next purchase or business move. I'll show you what a lender will actually look at.",
+  "default_price": 2290000,
+  "default_deposit": 665000,
+  "default_rate": 5.5,
+  "default_term": 30,
+  "default_frequency": "monthly",
+  "default_type": "interest_only",
+  "button": "Talk these numbers through",
+  "disclaimer": "Indicative only. Not a loan offer. Lenders assess servicing at higher test rates."
+}

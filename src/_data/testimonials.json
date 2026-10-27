@@ -1,0 +1,18 @@
+{
+  "eyebrow": "What clients say",
+  "heading": { "text": "In your corner.", "accent": "In their words", "full_stop": true },
+  "items": [
+    {
+      "label": "Client file · Tourism",
+      "pull_quote": "She took the time to understand what we do.",
+      "quote": "Philippa looked after our banking for 10+ years, and her support helped us grow from a small business into a corporate-sized operation. She took the time to understand what we do and tailored lending solutions to optimise our cashflow and balance sheet. She was always responsive and attentive, and she followed through on what she said she would do. I'd happily recommend her.",
+      "who": "Owner, luxury accommodation, tourism & hospitality operator"
+    },
+    {
+      "label": "Client file · Property",
+      "pull_quote": "Then I met Philly, and everything changed.",
+      "quote": "From the first meeting with Philippa it was clear that she is a stand-out. Previous meetings with large banks offered little-to-no hope of my dream to start a business in the Southern Lakes becoming a reality. Then I met Philly, and everything changed. She listened to the opportunity, dug into the details and provided invaluable advice, then jumped on board and has been a part of our business ever since. Totally dependable and has always, always gone out of her way to get things done, even when timeframes were insanely tight.",
+      "who": "Local construction company owner, property investor & developer"
+    }
+  ]
+}

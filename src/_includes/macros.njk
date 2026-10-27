@@ -1,0 +1,12 @@
+{# A heading with an optional accent part and a saffron full stop. #}
+{% macro heading(h, accentClass="font-serif-i font-normal tracking-normal text-[#4C6B55]") -%}
+{{ h.text | t | safe }}{% if h.accent %} <span class="{{ accentClass }}">{{ h.accent | t | safe }}</span>{% endif %}{% if h.full_stop %}<span class="text-[#F2B705]">.</span>{% endif %}
+{%- endmacro %}
+
+{% macro eyebrow(text, color="text-[#4F5B53]") -%}
+<div class="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] {{ color }}"><span class="h-1.5 w-1.5 bg-[#F2B705]"></span><span>{{ text | t | safe }}</span></div>
+{%- endmacro %}
+
+{% macro arrow(size=18, cls="") -%}
+<svg width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{{ cls }}" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+{%- endmacro %}

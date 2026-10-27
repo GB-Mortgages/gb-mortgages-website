@@ -1,0 +1,277 @@
+# GB Mortgages website editor (Decap CMS)
+#
+# LOGIN: replace this whole "backend" block with the one DecapBridge gives you
+# when you add the site (see SETUP.md, step 4). Keep the indentation.
+backend:
+  name: git-gateway
+  repo: YOUR-GITHUB-USERNAME/gb-mortgages-website
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR-DECAPBRIDGE-SITE-ID
+  gateway_url: https://gateway.decapbridge.com
+
+# Lets you test the editor on your own computer with "npm run cms".
+local_backend: true
+
+site_url: https://www.gbmortgages.co.nz
+display_url: https://www.gbmortgages.co.nz
+logo_url: /images/logo-main.png
+locale: en
+
+media_folder: src/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: "home"
+    label: "Home page"
+    description: "Each item is one section of the home page, from top to bottom. Text in [square brackets] shows highlighted on the site as a placeholder."
+    editor: { preview: false }
+    files:
+      - label: "1. Hero (top of the page)"
+        name: "hero"
+        file: "src/_data/hero.json"
+        format: "json"
+        fields:
+          - { label: "Small label, role", name: "eyebrow_role", widget: "string" }
+          - { label: "Small label, location", name: "eyebrow_location", widget: "string" }
+          - label: "Headline lines"
+            name: "headline_lines"
+            widget: "list"
+            summary: "{{fields.text}}"
+            hint: "Each line shows on its own line in the big headline."
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Green accent", name: "accent", widget: "boolean", default: false }
+              - { label: "Yellow full stop at the end", name: "full_stop", widget: "boolean", default: false }
+          - { label: "Intro paragraph", name: "intro", widget: "text" }
+          - { label: "Button text", name: "button", widget: "string" }
+          - { label: "Link under the button", name: "secondary_link", widget: "string" }
+          - { label: "Photo", name: "photo", widget: "image", choose_url: false }
+          - { label: "Photo description (for search engines and screen readers)", name: "photo_alt", widget: "string" }
+          - { label: "Name card, small label", name: "card_label", widget: "string" }
+          - { label: "Name card, name", name: "card_name", widget: "string" }
+          - { label: "Name card, text", name: "card_text", widget: "text" }
+
+      - label: "2. The whole picture"
+        name: "approach"
+        file: "src/_data/approach.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields: &heading
+              - { label: "Main text", name: "text", widget: "string" }
+              - { label: "Accent text (shows in the green or italic style)", name: "accent", widget: "string", required: false }
+              - { label: "Yellow full stop at the end", name: "full_stop", widget: "boolean", default: true }
+          - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { label: "Paragraph", name: "paragraph", widget: "text" } }
+          - { label: "Quote", name: "quote", widget: "text", required: false }
+          - label: "Diagram tabs"
+            name: "tabs"
+            widget: "list"
+            min: 3
+            max: 3
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Tab name", name: "label", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+      - label: "3. Who I work with"
+        name: "audiences"
+        file: "src/_data/audiences.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Business owners card"
+            name: "business"
+            widget: "object"
+            fields: &audience
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Yellow full stop after the title", name: "full_stop", widget: "boolean", default: true }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "First list, title", name: "list_one_title", widget: "string" }
+              - { label: "First list", name: "list_one", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Second list, title", name: "list_two_title", widget: "string" }
+              - { label: "Second list", name: "list_two", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Button text", name: "button", widget: "string" }
+          - { label: "Property investors card", name: "investors", widget: "object", fields: *audience }
+
+      - label: "4. Mortgage calculator"
+        name: "calculator"
+        file: "src/_data/calculator.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Starting property price ($)", name: "default_price", widget: "number", value_type: "int", min: 100000, max: 5000000, step: 10000 }
+          - { label: "Starting deposit ($)", name: "default_deposit", widget: "number", value_type: "int", min: 0, max: 2250000, step: 5000 }
+          - { label: "Starting interest rate (%)", name: "default_rate", widget: "number", value_type: "float", min: 1, max: 12, step: 0.05, hint: "Keep this close to current market rates." }
+          - { label: "Starting loan term (years)", name: "default_term", widget: "number", value_type: "int", min: 1, max: 30 }
+          - { label: "Starting repayment frequency", name: "default_frequency", widget: "select", options: ["weekly", "fortnightly", "monthly"] }
+          - label: "Starting loan type"
+            name: "default_type"
+            widget: "select"
+            options:
+              - { label: "Principal and interest", value: "principal_and_interest" }
+              - { label: "Interest only", value: "interest_only" }
+          - { label: "Button text", name: "button", widget: "string" }
+          - { label: "Disclaimer", name: "disclaimer", widget: "text" }
+
+      - label: "5. How I work"
+        name: "how"
+        file: "src/_data/how.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Steps (numbered 01, 02, 03 automatically)"
+            name: "steps"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Small label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+      - label: "6. About me"
+        name: "about"
+        file: "src/_data/about.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - { label: "Photo", name: "photo", widget: "image", choose_url: false }
+          - { label: "Photo description", name: "photo_alt", widget: "string" }
+          - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { label: "Paragraph", name: "paragraph", widget: "text" } }
+          - label: "Facts row"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.figure}}"
+            fields:
+              - { label: "Figure", name: "figure", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+          - { label: "Values, title", name: "values_title", widget: "string" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            summary: "{{fields.word}}"
+            fields:
+              - { label: "Word", name: "word", widget: "string" }
+              - { label: "Line", name: "line", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+      - label: "7. For accountants and lawyers"
+        name: "referrers"
+        file: "src/_data/referrers.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Button text", name: "button", widget: "string" }
+          - label: "Steps (numbered automatically)"
+            name: "steps"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+      - label: "8. What clients say"
+        name: "testimonials"
+        file: "src/_data/testimonials.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - label: "Client quotes"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.pull_quote}}"
+            fields:
+              - { label: "Small label", name: "label", widget: "string", hint: "For example: Client file · Property" }
+              - { label: "Short quote (large text)", name: "pull_quote", widget: "string" }
+              - { label: "Full quote", name: "quote", widget: "text" }
+              - { label: "Who said it", name: "who", widget: "string" }
+
+      - label: "9. Enquiry form"
+        name: "contact"
+        file: "src/_data/contact.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "object", fields: *heading }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Line under your name", name: "contact_line", widget: "string" }
+          - { label: "Name field, label", name: "field_name_label", widget: "string" }
+          - { label: "Name field, hint text", name: "field_name_placeholder", widget: "string" }
+          - { label: "Email field, label", name: "field_email_label", widget: "string" }
+          - { label: "Email field, hint text", name: "field_email_placeholder", widget: "string" }
+          - { label: "Phone field, label", name: "field_phone_label", widget: "string" }
+          - { label: "Phone field, hint text", name: "field_phone_placeholder", widget: "string" }
+          - { label: "Lending field, label", name: "field_overview_label", widget: "string" }
+          - { label: "Lending field, hint text", name: "field_overview_placeholder", widget: "string" }
+          - { label: "Referral field, label", name: "field_referral_label", widget: "string" }
+          - { label: "Referral field, hint text", name: "field_referral_placeholder", widget: "string" }
+          - { label: "Privacy note", name: "privacy_note", widget: "string" }
+          - { label: "Button text", name: "button", widget: "string" }
+          - { label: "Message if fields are missing", name: "error_message", widget: "string" }
+          - { label: "Thank-you message", name: "thank_you", widget: "string" }
+          - { label: "Message if sending fails", name: "send_error", widget: "string" }
+
+  - name: "disclosure"
+    label: "Disclosure statement"
+    editor: { preview: false }
+    files:
+      - label: "Disclosure statement page"
+        name: "disclosure"
+        file: "src/_data/disclosure.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading (a yellow full stop is added)", name: "heading", widget: "text" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Last updated", name: "last_updated", widget: "string", hint: "For example: 1 November 2026" }
+          - { label: "Search engine description", name: "seo_description", widget: "text" }
+          - label: "Sections (numbered automatically)"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [] }
+
+  - name: "settings"
+    label: "Contact details and settings"
+    editor: { preview: false }
+    files:
+      - label: "Contact details, menu and search settings"
+        name: "site"
+        file: "src/_data/site.json"
+        format: "json"
+        fields:
+          - { label: "Website address", name: "url", widget: "string", hint: "Full address, for example https://www.gbmortgages.co.nz" }
+          - { label: "Business name", name: "business_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Adviser name", name: "adviser_name", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Areas you serve (for search engines)", name: "areas_served", widget: "list", field: { label: "Area", name: "area", widget: "string" } }
+          - { label: "FSP number", name: "fsp_number", widget: "string" }
+          - { label: "Search engine title (home page)", name: "seo_title", widget: "string", hint: "About 60 characters." }
+          - { label: "Search engine description (home page)", name: "seo_description", widget: "text", hint: "About 150 to 160 characters." }
+          - { label: "Footer text", name: "footer_blurb", widget: "text" }
+          - { label: "Footer legal line", name: "footer_legal", widget: "text" }
+          - label: "Menu"
+            name: "nav"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link (section name, starts with #)", name: "link", widget: "string" }
+          - { label: "Header button text", name: "header_button", widget: "string" }

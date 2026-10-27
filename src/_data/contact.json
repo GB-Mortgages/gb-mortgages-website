@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Start here",
+  "heading": { "text": "Tell your story once.", "accent": "I'll take it from here", "full_stop": true },
+  "intro": "A few lines is plenty. I'll read it myself and come back to you directly to set up a proper conversation.",
+  "contact_line": "Your single point of contact",
+  "field_name_label": "Your name",
+  "field_name_placeholder": "First and last name",
+  "field_email_label": "Email",
+  "field_email_placeholder": "you@example.com",
+  "field_phone_label": "Phone",
+  "field_phone_placeholder": "Best number to reach you",
+  "field_overview_label": "Your lending, briefly",
+  "field_overview_placeholder": "What's going on, and what are you planning next?",
+  "field_referral_label": "Who introduced you to GB Mortgages?",
+  "field_referral_placeholder": "Your accountant, lawyer, a client, or someone else",
+  "privacy_note": "Kept confidential. Read only by Philippa.",
+  "button": "Send to Philippa",
+  "error_message": "Add your name, email and a line about your lending.",
+  "thank_you": "Thanks. I've got your message and I'll be in touch within one working day.",
+  "send_error": "Something went wrong. Please email or call me directly."
+}

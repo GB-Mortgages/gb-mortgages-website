@@ -1,0 +1,315 @@
+---
+layout: base.njk
+permalink: /
+---
+{%- from "macros.njk" import heading, eyebrow, arrow -%}
+<main>
+<!-- 1. Hero -->
+<section class="grain relative">
+  <div class="h-[72px]"></div>
+  <div class="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-5 pb-16 pt-10 sm:px-10 lg:grid-cols-12 lg:gap-8 lg:pb-16 lg:pt-12">
+    <div class="flex flex-col justify-between lg:col-span-7">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[0.22em] text-[#4F5B53]"><span class="inline-flex items-center gap-3 whitespace-nowrap"><span class="h-2 w-2 bg-[#F2B705]"></span>{{ hero.eyebrow_role }}</span><span class="hidden sm:inline" aria-hidden="true">·</span><span class="basis-full pl-5 sm:basis-auto sm:pl-0">{{ hero.eyebrow_location }}</span></div>
+      <h1 class="mt-8 font-display text-[3.3rem] font-black leading-[1.04] tracking-[-0.02em] text-[#064530] sm:text-7xl sm:leading-[0.92] lg:mt-8 lg:text-[5.6rem] xl:text-[6.3rem]">
+        {%- for line in hero.headline_lines %}
+        <span class="block pb-[0.1em]">{% if line.accent %}<span class="text-[#4C6B55]">{{ line.text }}</span>{% else %}{{ line.text }}{% endif %}{% if line.full_stop %}<span class="text-[#F2B705]">.</span>{% endif %}</span>
+        {%- endfor %}
+      </h1>
+      <div class="mt-10 grid gap-8 border-t border-[#D3CCBD] pt-8 sm:grid-cols-2 lg:mt-12">
+        <p class="max-w-md text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ hero.intro | t | safe }}</p>
+        <div class="flex flex-col items-start gap-5 sm:items-end sm:justify-end">
+          <a href="#talk" class="group relative inline-flex items-center gap-3 overflow-hidden rounded-lg bg-[#F2B705] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA]">{{ hero.button }} {{ arrow(16, "transition-transform duration-300 group-hover:translate-x-1") | safe }}</a>
+          <a href="#approach" class="group text-sm font-medium text-[#064530]">{{ hero.secondary_link }}<span class="block h-px w-full origin-left bg-[#064530] transition-transform duration-500 group-hover:scale-x-0"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative mx-5 mb-16 aspect-[4/5] sm:mx-10 lg:absolute lg:bottom-16 lg:right-0 lg:top-[72px] lg:m-0 lg:aspect-auto lg:w-[38%]">
+    <div class="absolute inset-0 overflow-hidden bg-[#2C3E35]"><img alt="{{ hero.photo_alt }}" class="absolute inset-0 h-full w-full object-cover object-top" src="{{ hero.photo }}" fetchpriority="high"></div>
+    <div class="absolute bottom-0 left-0 max-w-[92%] rounded-tr-md bg-[#F4F1EA] py-4 pl-0 pr-6 sm:py-5 lg:max-w-[420px] lg:pl-8 lg:pr-10">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]">{{ hero.card_label }}</p>
+      <p class="mt-1 flex items-center gap-2.5 text-2xl font-semibold tracking-tight text-[#064530] sm:text-3xl"><span class="h-2.5 w-2.5 bg-[#F2B705]"></span>{{ hero.card_name }}</p>
+      <p class="mt-2 text-[15px] leading-snug text-[#064530] sm:text-base">{{ hero.card_text | t | safe }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. The whole picture -->
+<section id="approach" class="mx-auto max-w-[1440px] scroll-mt-20 px-5 py-24 sm:px-10 lg:py-40">
+  <div class="grid gap-16 lg:grid-cols-12">
+    <div class="lg:col-span-6">
+      {{ eyebrow(approach.eyebrow) | safe }}
+      <h2 class="mt-8 font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(approach.heading) | safe }}</h2>
+      {%- for p in approach.paragraphs %}
+      <p class="{{ 'mt-10' if loop.first else 'mt-5' }} max-w-xl text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ p | t | safe }}</p>
+      {%- endfor %}
+      {%- if approach.quote %}
+      <blockquote class="mt-10 max-w-xl border-l-2 border-[#F2B705] pl-6 text-lg font-medium leading-relaxed text-[#064530] sm:text-xl">{{ approach.quote | t | safe }}</blockquote>
+      {%- endif %}
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8">
+      <div class="border border-[#D3CCBD] bg-[#EAE5DA]/60 p-6 sm:p-10">
+        <div class="flex justify-center">
+          <svg viewBox="0 0 340 330" class="w-full max-w-[460px]" role="img" aria-label="{{ approach.tabs[0].label }}, {{ approach.tabs[1].label }} and {{ approach.tabs[2].label }} lending overlapping, with you in the middle">
+            <circle data-c="0" cx="120" cy="120" r="88" fill="rgba(76,107,85,0.16)" stroke="#4C6B55" stroke-width="1.5"></circle>
+            <circle data-c="1" cx="220" cy="120" r="88" fill="rgba(6,69,48,0.03)" stroke="#064530" stroke-width="1.5"></circle>
+            <circle data-c="2" cx="170" cy="205" r="88" fill="rgba(6,69,48,0.03)" stroke="#064530" stroke-width="1.5"></circle>
+            <text x="80" y="100" text-anchor="middle" class="font-mono text-[11px] uppercase tracking-[0.15em]" fill="#064530">{{ approach.tabs[0].label }}</text>
+            <text x="260" y="100" text-anchor="middle" class="font-mono text-[11px] uppercase tracking-[0.15em]" fill="#064530">{{ approach.tabs[1].label }}</text>
+            <text x="170" y="255" text-anchor="middle" class="font-mono text-[11px] uppercase tracking-[0.15em]" fill="#064530">{{ approach.tabs[2].label }}</text>
+            <circle cx="170" cy="150" r="20" fill="#F2B705"></circle>
+            <text x="170" y="154" text-anchor="middle" fill="#064530" class="font-mono text-[10px] font-bold">YOU</text>
+          </svg>
+        </div>
+        <div class="mt-6 flex border-b border-[#D3CCBD]" role="tablist">
+          {%- for tab in approach.tabs %}
+          <button role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}" data-tab="{{ loop.index0 }}" data-copy="{{ tab.text }}" class="tab-btn relative flex-1 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-[#4F5B53] transition-colors hover:text-[#064530] sm:text-xs">{{ tab.label }}<span class="tab-bar absolute inset-x-0 -bottom-px hidden h-[2px] bg-[#4C6B55]"></span></button>
+          {%- endfor %}
+        </div>
+        <p id="tabCopy" class="mt-6 min-h-[96px] text-base leading-relaxed text-[#064530]">{{ approach.tabs[0].text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Who I work with -->
+<section class="border-t border-[#D3CCBD] bg-[#EAE5DA]/50">
+  <div class="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:py-36">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        {{ eyebrow(audiences.eyebrow) | safe }}
+        <h2 class="mt-8 font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(audiences.heading) | safe }}</h2>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9"><p class="text-base leading-relaxed text-[#4F5B53]">{{ audiences.intro | t | safe }}</p></div>
+    </div>
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
+      {%- set b = audiences.business %}
+      <article id="business-owners" class="group flex h-full scroll-mt-24 flex-col bg-[#064530] p-8 text-[#F4F1EA] sm:p-12 lg:p-16">
+        <h3 class="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-5xl">{{ b.title }}{% if b.full_stop %}<span class="text-[#F2B705]">.</span>{% endif %}</h3>
+        <p class="mt-6 max-w-lg text-base leading-relaxed text-[#DCE2DA] sm:text-lg">{{ b.intro | t | safe }}</p>
+        <div class="mt-10 grid gap-8 xl:grid-cols-2">
+          <div class="border-t border-[#F4F1EA]/15 pt-6">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#C9D2C9]">{{ b.list_one_title }}</p>
+            <ul class="mt-4 space-y-3">
+              {%- for item in b.list_one %}
+              <li class="flex gap-3 text-[15px] leading-snug text-[#F4F1EA]"><span class="mt-[9px] h-px w-3 shrink-0 bg-[#C9D2C9]"></span>{{ item | t | safe }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+          <div class="border-t border-[#F4F1EA]/15 pt-6">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#C9D2C9]">{{ b.list_two_title }}</p>
+            <ul class="mt-4 space-y-3">
+              {%- for item in b.list_two %}
+              <li class="flex gap-3 text-[15px] leading-snug text-[#F4F1EA]"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 bg-[#F2B705]"></span>{{ item | t | safe }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="mt-auto pt-12"><a href="#talk" class="inline-flex items-center gap-3 text-base font-semibold text-[#F2B705]">{{ b.button }}{{ arrow(18, "transition-transform duration-300 group-hover:translate-x-1.5") | safe }}</a></div>
+      </article>
+      {%- set v = audiences.investors %}
+      <article id="investors" class="group flex h-full scroll-mt-24 flex-col border border-[#C5D1C2] bg-[#DCE5D8] p-8 text-[#064530] sm:p-12 lg:p-16">
+        <h3 class="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-5xl">{{ v.title }}{% if v.full_stop %}<span class="text-[#F2B705]">.</span>{% endif %}</h3>
+        <p class="mt-6 max-w-lg text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ v.intro | t | safe }}</p>
+        <div class="mt-10 grid gap-8 xl:grid-cols-2">
+          <div class="border-t border-[#064530]/15 pt-6">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#4C6B55]">{{ v.list_one_title }}</p>
+            <ul class="mt-4 space-y-3">
+              {%- for item in v.list_one %}
+              <li class="flex gap-3 text-[15px] leading-snug text-[#064530]"><span class="mt-[9px] h-px w-3 shrink-0 bg-[#4C6B55]"></span>{{ item | t | safe }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+          <div class="border-t border-[#064530]/15 pt-6">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#4C6B55]">{{ v.list_two_title }}</p>
+            <ul class="mt-4 space-y-3">
+              {%- for item in v.list_two %}
+              <li class="flex gap-3 text-[15px] leading-snug text-[#064530]"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 bg-[#F2B705]"></span>{{ item | t | safe }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="mt-auto pt-12"><a href="#talk" class="inline-flex items-center gap-3 rounded-lg bg-[#F2B705] px-6 py-3.5 text-base font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA]">{{ v.button }}{{ arrow(18, "transition-transform duration-300 group-hover:translate-x-1.5") | safe }}</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Mortgage calculator -->
+{%- set c = calculator %}
+<section id="calculator" class="scroll-mt-16 border-t border-[#D3CCBD]">
+  <div class="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:py-32">
+    {{ eyebrow(c.eyebrow) | safe }}
+    <h2 class="mt-8 max-w-3xl font-display text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-[#064530] sm:text-5xl lg:text-[3.4rem]">{{ c.heading | t | safe }}</h2>
+    <p class="mt-6 max-w-xl text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ c.intro | t | safe }}</p>
+    <div class="mt-14 rounded-xl border border-[#D3CCBD] bg-[#F4F1EA] p-6 sm:p-12">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-10">
+        <form id="calc" class="flex flex-col gap-9" onsubmit="return false">
+          <div>
+            <div class="flex items-baseline justify-between gap-4"><label for="c-price" class="text-sm text-[#4F5B53]">Property price</label><span id="c-price-out" class="font-display text-[1.4rem] font-medium text-[#064530]"></span></div>
+            <input id="c-price" type="range" min="100000" max="5000000" step="10000" value="{{ c.default_price }}" class="calc-range mt-4 w-full">
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between gap-4"><label for="c-dep" class="text-sm text-[#4F5B53]">Deposit / equity</label><span id="c-dep-out" class="font-display text-[1.4rem] font-medium text-[#064530]"></span></div>
+            <input id="c-dep" type="range" min="0" max="2250000" step="5000" value="{{ c.default_deposit }}" class="calc-range mt-4 w-full">
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between gap-4"><label for="c-rate" class="text-sm text-[#4F5B53]">Interest rate</label><span id="c-rate-out" class="font-display text-[1.4rem] font-medium text-[#064530]"></span></div>
+            <input id="c-rate" type="range" min="1" max="12" step="0.05" value="{{ c.default_rate }}" class="calc-range mt-4 w-full">
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between gap-4"><label for="c-term" class="text-sm text-[#4F5B53]">Loan term</label><span id="c-term-out" class="font-display text-[1.4rem] font-medium text-[#064530]"></span></div>
+            <input id="c-term" type="range" min="1" max="30" step="1" value="{{ c.default_term }}" class="calc-range mt-4 w-full">
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <fieldset class="calc-seg"><legend class="sr-only">Repayment frequency</legend>
+              <label><input type="radio" name="c-freq" value="52" class="sr-only"{% if c.default_frequency == "weekly" %} checked{% endif %}>Weekly</label><label><input type="radio" name="c-freq" value="26" class="sr-only"{% if c.default_frequency == "fortnightly" %} checked{% endif %}>Fortnightly</label><label><input type="radio" name="c-freq" value="12" class="sr-only"{% if c.default_frequency == "monthly" %} checked{% endif %}>Monthly</label>
+            </fieldset>
+            <fieldset class="calc-seg"><legend class="sr-only">Loan type</legend>
+              <label><input type="radio" name="c-type" value="pi" class="sr-only"{% if c.default_type != "interest_only" %} checked{% endif %}>Principal &amp; interest</label><label><input type="radio" name="c-type" value="io" class="sr-only"{% if c.default_type == "interest_only" %} checked{% endif %}>Interest only</label>
+            </fieldset>
+          </div>
+        </form>
+        <div class="flex flex-col justify-between gap-10 rounded-lg bg-[#064530] p-8 text-[#F4F1EA]" aria-live="polite">
+          <div>
+            <p id="c-label" class="font-mono text-[11px] uppercase tracking-[0.2em] text-[#C9D2C9]">Estimated monthly repayment</p>
+            <p id="c-pay" class="mt-4 font-display text-6xl font-medium leading-none tracking-[-0.02em] text-[#F2B705] sm:text-[4rem]"></p>
+            <dl class="mt-8 text-sm">
+              <div class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">Loan amount</dt><dd id="c-loan" class="font-medium"></dd></div>
+              <div class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">LVR</dt><dd id="c-lvr" class="font-medium"></dd></div>
+              <div class="flex justify-between gap-4 py-3.5"><dt class="text-[#DCE2DA]">Total interest (over term)</dt><dd id="c-interest" class="font-medium"></dd></div>
+            </dl>
+          </div>
+          <a href="#talk" class="flex w-full items-center justify-center gap-2 rounded-md bg-[#F2B705] px-6 py-4 text-base font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#F4F1EA]">{{ c.button }} <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <p class="mt-5 text-xs text-[#4F5B53]">{{ c.disclaimer | t | safe }}</p>
+  </div>
+</section>
+
+<!-- 5. How I work -->
+<section id="how" class="mx-auto max-w-[1440px] scroll-mt-20 px-5 py-24 sm:px-10 lg:py-36">
+  <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+    <div>
+      {{ eyebrow(how.eyebrow) | safe }}
+      <h2 class="mt-8 max-w-3xl font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(how.heading, "text-[#4C6B55]") | safe }}</h2>
+    </div>
+    <p class="max-w-sm text-base leading-relaxed text-[#4F5B53]">{{ how.intro | t | safe }}</p>
+  </div>
+  <div class="mt-16 grid border-l border-t border-[#D3CCBD] md:grid-cols-3">
+    {%- for s in how.steps %}
+    <div class="group relative flex min-h-[380px] flex-col overflow-hidden border-b border-r border-[#D3CCBD] p-7 sm:p-10">
+      <span class="absolute inset-0 origin-bottom scale-y-0 bg-[#064530] transition-transform duration-500 group-hover:scale-y-100"></span>
+      <div class="relative flex h-full flex-col">
+        <span class="font-display text-6xl font-black tracking-[-0.04em] text-[#4C6B55] transition-colors duration-500 group-hover:text-[#C9D2C9]">{{ loop.index | pad2 }}<span class="text-[#F2B705]">.</span></span>
+        <p class="mt-10 font-mono text-xs uppercase tracking-[0.2em] text-[#4F5B53] transition-colors duration-500 group-hover:text-[#C9D2C9]">{{ s.label }}</p>
+        <h3 class="mt-3 text-2xl font-semibold tracking-tight text-[#064530] transition-colors duration-500 group-hover:text-[#F4F1EA]">{{ s.title | t | safe }}</h3>
+        <p class="mt-auto pt-8 text-base leading-relaxed text-[#4F5B53] transition-colors duration-500 group-hover:text-[#DCE2DA]">{{ s.text | t | safe }}</p>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- 6. About me -->
+<section id="about" class="scroll-mt-16 border-t border-[#D3CCBD] bg-[#EAE5DA]/50">
+  <div class="mx-auto grid max-w-[1440px] gap-14 px-5 py-24 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:py-36">
+    <div class="lg:col-span-5">
+      <div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden bg-[#064530]">
+        <img alt="{{ about.photo_alt }}" class="h-full w-full object-cover object-top" src="{{ about.photo }}" loading="lazy">
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      {{ eyebrow(about.eyebrow) | safe }}
+      <h2 class="mt-8 font-display text-4xl font-black leading-[1] tracking-[-0.03em] sm:text-5xl lg:text-6xl">{{ heading(about.heading) | safe }}</h2>
+      <div class="mt-10 max-w-2xl space-y-5 text-base leading-relaxed text-[#4F5B53] sm:text-lg">
+        {%- for p in about.paragraphs %}
+        <p>{{ p | t | safe }}</p>
+        {%- endfor %}
+      </div>
+      <div class="mt-12 grid grid-cols-2 gap-px border border-[#D3CCBD] bg-[#D3CCBD] md:grid-cols-4">
+        {%- for s in about.stats %}
+        <div class="bg-[#F4F1EA] p-5"><p class="text-2xl font-semibold tracking-tight text-[#064530]">{{ s.figure }}</p><p class="mt-2 text-[13px] leading-snug text-[#4F5B53]">{{ s.text | t | safe }}</p></div>
+        {%- endfor %}
+      </div>
+      <p class="mt-14 text-xs font-medium uppercase tracking-[0.22em] text-[#4C6B55]">{{ about.values_title }}</p>
+      <div class="mt-6 grid gap-8 sm:grid-cols-2">
+        {%- for val in about.values %}
+        <div class="border-t border-[#064530]/15 pt-5"><p class="font-display text-2xl font-semibold text-[#064530]">{{ val.word }}<span class="text-[#F2B705]">.</span></p><p class="mt-2 font-medium text-[#064530]">{{ val.line | t | safe }}</p><p class="mt-2 text-[15px] leading-relaxed text-[#4F5B53]">{{ val.text | t | safe }}</p></div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. For accountants and lawyers -->
+<section id="referrers" class="grain relative scroll-mt-16 bg-[#064530] text-[#F4F1EA]">
+  <div class="relative mx-auto grid max-w-[1440px] gap-16 px-5 py-24 sm:px-10 lg:grid-cols-12 lg:py-36">
+    <div class="lg:col-span-5">
+      {{ eyebrow(referrers.eyebrow, "text-[#C9D2C9]") | safe }}
+      <h2 class="mt-8 font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(referrers.heading, "font-serif-i font-normal tracking-normal text-[#F2B705]") | safe }}</h2>
+      <p class="mt-8 max-w-md text-base leading-relaxed text-[#DCE2DA] sm:text-lg">{{ referrers.intro | t | safe }}</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <span class="inline-flex items-center gap-2 border border-[#F4F1EA]/25 px-4 py-2 font-mono text-xs uppercase tracking-[0.15em]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg> Accountants</span>
+        <span class="inline-flex items-center gap-2 border border-[#F4F1EA]/25 px-4 py-2 font-mono text-xs uppercase tracking-[0.15em]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg> Lawyers</span>
+      </div>
+      <a href="#talk" class="group mt-10 inline-flex items-center gap-3 rounded-lg bg-[#F2B705] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#F4F1EA]">{{ referrers.button }} {{ arrow(16, "transition-transform group-hover:translate-x-1") | safe }}</a>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      {%- for s in referrers.steps %}
+      <div class="grid grid-cols-[64px_1fr] gap-4 border-t border-[#F4F1EA]/20 py-8 sm:grid-cols-[96px_1fr]"><span class="font-display text-4xl font-black tracking-[-0.03em] text-[#F2B705] sm:text-5xl">{{ loop.index | pad2 }}</span><div><h3 class="text-2xl font-semibold tracking-tight">{{ s.title | t | safe }}</h3><p class="mt-2 text-base leading-relaxed text-[#DCE2DA]">{{ s.text | t | safe }}</p></div></div>
+      {%- endfor %}
+      <div class="border-t border-[#F4F1EA]/20"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. What clients say -->
+<section class="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:py-36">
+  {{ eyebrow(testimonials.eyebrow) | safe }}
+  <h2 class="mt-8 font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(testimonials.heading) | safe }}</h2>
+  <div class="mt-16 grid gap-px border border-[#D3CCBD] bg-[#D3CCBD] lg:grid-cols-2">
+    {%- for q in testimonials.items %}
+    <figure class="m-0 flex h-full flex-col bg-[#F4F1EA] p-7 sm:p-12">
+      <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span>{{ q.label }}</span><span class="text-[#4C6B55]">{{ loop.index | pad2 }}</span></div>
+      <p class="mt-10 text-2xl font-medium leading-snug tracking-tight text-[#064530] sm:text-3xl"><span class="text-[#F2B705]">“</span>{{ q.pull_quote | t | safe }}<span class="text-[#F2B705]">”</span></p>
+      <blockquote class="mb-10 mt-6 text-base leading-relaxed text-[#4F5B53]">{{ q.quote | t | safe }}</blockquote>
+      <figcaption class="mt-auto flex items-center gap-3 border-t border-[#D3CCBD] pt-6 text-sm font-semibold text-[#064530]"><span class="h-px w-8 bg-[#F2B705]"></span>{{ q.who | t | safe }}</figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- 9. Enquiry form -->
+{%- set f = contact %}
+<section id="talk" class="scroll-mt-16 border-t border-[#D3CCBD] bg-[#EAE5DA]/50">
+  <div class="mx-auto grid max-w-[1440px] gap-16 px-5 py-24 sm:px-10 lg:grid-cols-12 lg:py-36">
+    <div class="lg:col-span-5">
+      {{ eyebrow(f.eyebrow) | safe }}
+      <h2 class="mt-8 font-display text-5xl font-black leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-7xl">{{ heading(f.heading) | safe }}</h2>
+      <p class="mt-8 max-w-md text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ f.intro | t | safe }}</p>
+      <div class="mt-10 flex items-center gap-4 border-t border-[#D3CCBD] pt-6"><span class="flex h-12 w-12 items-center justify-center bg-[#F2B705] font-display text-xl font-black tracking-[-0.02em] text-[#064530]" aria-hidden="true">PI</span><div><p class="font-semibold">{{ site.adviser_name }}</p><p class="text-sm text-[#4F5B53]">{{ f.contact_line }}</p></div></div>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <div class="border border-[#D3CCBD] bg-[#F4F1EA] p-6 sm:p-12">
+        <form id="enquiry" name="enquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" class="space-y-8" novalidate data-error="{{ f.error_message }}" data-thanks="{{ f.thank_you }}" data-fail="{{ f.send_error }}">
+          <input type="hidden" name="form-name" value="enquiry">
+          <p class="hidden"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+          <label for="f-name" class="block"><span class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span class="text-[#4C6B55]">01</span>{{ f.field_name_label }}</span><input id="f-name" required placeholder="{{ f.field_name_placeholder }}" class="field" name="name" autocomplete="name"></label>
+          <div class="grid gap-8 sm:grid-cols-2">
+            <label for="f-email" class="block"><span class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span class="text-[#4C6B55]">02</span>{{ f.field_email_label }}</span><input id="f-email" type="email" required placeholder="{{ f.field_email_placeholder }}" class="field" name="email" autocomplete="email"></label>
+            <label for="f-phone" class="block"><span class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span class="text-[#4C6B55]">03</span>{{ f.field_phone_label }}</span><input id="f-phone" type="tel" placeholder="{{ f.field_phone_placeholder }}" class="field" name="phone" autocomplete="tel"></label>
+          </div>
+          <label for="f-overview" class="block"><span class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span class="text-[#4C6B55]">04</span>{{ f.field_overview_label }}</span><textarea id="f-overview" name="overview" required rows="3" placeholder="{{ f.field_overview_placeholder }}" class="field resize-none"></textarea></label>
+          <label for="f-referral" class="block"><span class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span class="text-[#4C6B55]">05</span>{{ f.field_referral_label }}</span><input id="f-referral" placeholder="{{ f.field_referral_placeholder }}" class="field" name="referral"></label>
+          <div class="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+            <p id="formNote" class="text-xs text-[#4F5B53]" role="status">{{ f.privacy_note }}</p>
+            <button type="submit" class="group relative inline-flex items-center gap-3 overflow-hidden rounded-lg bg-[#F2B705] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA]">{{ f.button }} {{ arrow(16, "transition-transform group-hover:translate-x-1") | safe }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>

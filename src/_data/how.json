@@ -1,0 +1,22 @@
+{
+  "eyebrow": "How I work",
+  "heading": { "text": "Friendly enough to trust.", "accent": "Sharp enough to push", "full_stop": true },
+  "intro": "I plan the structure, prepare the numbers and make your case to the right lender. Then I stay across it as things change.",
+  "steps": [
+    {
+      "label": "Know the whole picture",
+      "title": "I look past the loan in front of me",
+      "text": "Your business, home and investments are connected. I listen first, then look at how company, trust and personal borrowing fit together, so the lending is built around what you're working towards."
+    },
+    {
+      "label": "Know how lenders think",
+      "title": "I know what the lender needs to see",
+      "text": "Over 15 years in banking taught me how lenders decide. Before anything goes in, I work out what the lender will want to see, then prepare the numbers and your story to answer it."
+    },
+    {
+      "label": "In your corner",
+      "title": "I tell you what I think, then see it through",
+      "text": "I won't hand you a list of options and leave you to it. I make the case, push where there's a sensible path, say so when something isn't possible, and stay involved as your plans change."
+    }
+  ]
+}

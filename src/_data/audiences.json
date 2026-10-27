@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Who I work with",
+  "heading": { "text": "You make the moves.", "accent": "I'll sort the lending", "full_stop": true },
+  "intro": "I keep a small client list, by choice. Most are one of two kinds of people, and both have lending that's more connected than it first looks.",
+  "business": {
+    "title": "Business owners",
+    "full_stop": true,
+    "intro": "You're growing the business, buying property or planning your next move, and your lending is split across all three. I treat it as one picture, not three separate loans.",
+    "list_one_title": "Sound familiar?",
+    "list_one": [
+      "Explaining your situation again and again",
+      "Being treated like another loan application",
+      "Chasing progress while you're running a business"
+    ],
+    "list_two_title": "What I do",
+    "list_two": [
+      "Get to know how your business actually works",
+      "Structure company, trust and personal borrowing together",
+      "Prepare the numbers and make your case to the right lender",
+      "Keep things moving and tell you what happens next"
+    ],
+    "button": "Talk through your next move"
+  },
+  "investors": {
+    "title": "Residential property investors",
+    "full_stop": true,
+    "intro": "You don't need someone to arrange another home loan. You need someone who sees how each purchase fits the portfolio, and plans for it before you commit.",
+    "list_one_title": "What you're weighing up",
+    "list_one": [
+      "What your next purchase does to your borrowing",
+      "Whether your structure still makes sense",
+      "What's possible before you sign anything"
+    ],
+    "list_two_title": "What I do",
+    "list_two": [
+      "Work across multiple lenders, not just one",
+      "Plan each purchase against the whole portfolio",
+      "Tell you straight what's possible, and what isn't",
+      "Bring my own property experience, not just the lender's view"
+    ],
+    "button": "Plan your next purchase"
+  }
+}

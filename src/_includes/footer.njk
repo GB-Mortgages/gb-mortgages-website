@@ -1,0 +1,22 @@
+<footer class="bg-[#064530] text-[#F4F1EA]">
+  <div class="mx-auto max-w-[1440px] px-5 pt-20 sm:px-10">
+    <div class="grid gap-12 border-b border-[#F4F1EA]/15 pb-16 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <span class="inline-flex flex-col items-end"><img alt="{{ site.business_name }}" class="h-16 w-auto sm:h-20" src="/images/logo-main-light.png" width="700" height="227" loading="lazy"><span class="-mt-0.5 text-base font-medium leading-none tracking-wide text-[#F2B705] sm:text-lg">{{ site.tagline }}</span></span>
+        <p class="mt-6 max-w-sm text-[#C9D2C9]">{{ site.footer_blurb | t | safe }}</p>
+      </div>
+      <div class="md:col-span-3">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[#C9D2C9]">Contact</p>
+        <p class="mt-4"><a href="mailto:{{ site.email }}" class="hover:text-[#F2B705]">{{ site.email }}</a></p>
+        <p class="mt-1"><a href="tel:{{ site.phone | replace(' ', '') }}" class="hover:text-[#F2B705]">{{ site.phone }}</a></p>
+        <p class="mt-1 text-[#C9D2C9]">{{ site.location }}</p>
+        <a href="/disclosure/" class="mt-6 inline-block border-b border-[#F2B705] pb-0.5 text-sm transition-colors hover:text-[#F2B705]">Disclosure statement</a>
+      </div>
+      <div class="flex items-start md:col-span-4 md:justify-end">
+        <a href="#top" class="group inline-flex items-center gap-2 rounded-lg border border-[#F4F1EA]/25 px-4 py-2 text-sm transition-colors hover:border-[#F2B705] hover:text-[#F2B705]">Back to top <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:-translate-y-0.5" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></a>
+      </div>
+    </div>
+    <p class="py-8 text-xs leading-relaxed text-[#C9D2C9]">{{ site.footer_legal | t | safe }} FSP {{ site.fsp_number | t | safe }}. © {{ "" | year }} {{ site.business_name }}.</p>
+    <p aria-hidden="true" class="select-none overflow-hidden whitespace-nowrap pb-4 text-[8.2vw] font-bold leading-[1] tracking-[-0.04em] text-[#F4F1EA]/[0.07] 2xl:text-[7.4rem]">{{ site.tagline }}</p>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+---
+layout: base.njk
+permalink: /disclosure/
+eleventyComputed:
+  pageTitle: "Disclosure Statement | GB Mortgages, Queenstown Mortgage Adviser"
+  pageDescription: "{{ disclosure.seo_description }}"
+---
+{%- set d = disclosure -%}
+<main class="pt-[72px]">
+<section class="mx-auto max-w-[1440px] px-5 pb-12 pt-14 sm:px-10 lg:pt-20">
+  <a href="/" class="group inline-flex items-center gap-2 text-sm font-medium text-[#064530]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:-translate-x-1" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> Back to home</a>
+  <div class="mt-10 grid gap-10 lg:grid-cols-12">
+    <div class="lg:col-span-8">
+      <p class="text-xs font-medium uppercase tracking-[0.22em] text-[#4C6B55]">{{ d.eyebrow }}</p>
+      <h1 class="mt-6 font-display text-4xl font-black leading-[1.02] tracking-[-0.03em] text-[#064530] sm:text-5xl sm:leading-[1] lg:text-6xl">{{ d.heading | t | safe }}<span class="text-[#F2B705]">.</span></h1>
+    </div>
+    <div class="lg:col-span-4 lg:pt-10">
+      <p class="text-base leading-relaxed text-[#4F5B53]">{{ d.intro | t | safe }} Last updated {{ d.last_updated | t | safe }}.</p>
+    </div>
+  </div>
+</section>
+<section class="mx-auto max-w-[1440px] px-5 pb-28 sm:px-10">
+  <div class="grid gap-12 lg:grid-cols-12">
+    <nav class="hidden lg:col-span-3 lg:block" aria-label="Disclosure sections">
+      <ul id="discNav" class="sticky top-28 space-y-2 border-l border-[#D3CCBD] pl-5 text-sm">
+        {%- for s in d.sections %}
+        <li><a href="#d-{{ loop.index }}" data-go="d-{{ loop.index }}" class="text-left text-[#4F5B53] transition-colors hover:text-[#064530]"><span class="mr-2 text-[#4C6B55]">{{ loop.index | pad2 }}</span>{{ s.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="lg:col-span-8 lg:col-start-5">
+      {%- for s in d.sections %}
+      <article id="d-{{ loop.index }}" class="d-art grid scroll-mt-24 gap-4 {{ 'border-y' if loop.last else 'border-t' }} border-[#D3CCBD] py-10 sm:grid-cols-[64px_1fr]">
+        <span class="flex items-start gap-1.5 text-sm font-semibold text-[#4C6B55]"><span class="mt-1.5 h-1.5 w-1.5 bg-[#F2B705]"></span>{{ loop.index | pad2 }}</span>
+        <div><h2 class="text-2xl font-semibold tracking-tight text-[#064530]">{{ s.title }}</h2>
+        <div class="disc-body">{{ s.body | md | safe }}</div></div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+</main>

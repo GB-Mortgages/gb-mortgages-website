@@ -1,0 +1,19 @@
+# Search engines and AI assistants are welcome.
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /thanks/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.gbmortgages.co.nz/sitemap.xml

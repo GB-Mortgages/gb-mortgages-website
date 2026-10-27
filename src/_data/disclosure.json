@@ -1,0 +1,53 @@
+{
+  "eyebrow": "Disclosure statement",
+  "heading": "Before we talk about your lending, here's how I work and how I'm paid",
+  "intro": "You're entitled to know this up front. It's written plainly, and if anything isn't clear, ask me.",
+  "last_updated": "[date]",
+  "seo_description": "How Philippa Impey of GB Mortgages works, how she's paid, the lenders she works with and what to do if something's not right.",
+  "sections": [
+    {
+      "title": "Who I am and who I work under",
+      "body": "I'm Philippa Impey, and GB Mortgages is my business. I give mortgage and lending advice as a financial adviser. I work under the Financial Advice Provider licence held by [Kiwi Adviser Network Limited, FSP number], issued by the Financial Markets Authority (FMA).\n\n- Business: [GB Mortgages legal entity name]\n- Adviser: Philippa Impey, FSP [FSP number]\n- Email: [email@gbmortgages.co.nz]\n- Phone: [+64 phone number]\n- Address: [physical / postal address]"
+    },
+    {
+      "title": "What I can help with",
+      "body": "I give advice on borrowing. That covers lending for:\n\n- Business and commercial purposes, including company and trust borrowing\n- Residential property, including investment property\n- Personal purposes, where it's part of your wider lending picture\n\nThe products I can advise on: [confirm list, e.g. residential lending (purchase, top-up, construction, refix, restructure, bridging), business and commercial lending (working capital, business purchase, commercial property), asset finance]."
+    },
+    {
+      "title": "What I don't advise on",
+      "body": "I stick to lending. I don't give advice on:\n\n- Legal matters, trusts, wills or estate planning\n- Tax or accounting\n- Insurance, personal or general\n- Investment products like shares, bonds or managed funds\n\nIf you need advice in these areas, talk to a specialist. I'm happy to work alongside your accountant or lawyer, or point you to someone if you don't have one."
+    },
+    {
+      "title": "The lenders I work with",
+      "body": "I work across multiple lenders, so you're not limited to one lender's products. I don't have access to every lender or product in New Zealand. The lenders I currently work with are: [list of lenders available through the aggregator]."
+    },
+    {
+      "title": "How I'm paid",
+      "body": "Straight answer: in most cases, the lender pays me, not you.\n\nIf you take out or change a loan after my advice, the lender usually pays a commission at settlement. This is generally [x% to x%] of the loan amount. Some lenders also pay an ongoing trail commission of [x% to x%] of the loan balance, and some pay a fee when I help you refix. Before you apply, I'll tell you which lender is paying what for your loan."
+    },
+    {
+      "title": "When I might charge you a fee",
+      "body": "For most residential lending, I don't charge you a fee. Business and commercial lending can be different, because some lenders in that space don't pay commission. If a fee applies, I'll scope it out with you after our first meeting and we'll agree it in writing before I do the work. Any commission I do receive comes off that fee.\n\nA fee might also apply if:\n\n- The lender doesn't pay an upfront commission\n- The work is advice-only, or a lot of work that doesn't end in a loan\n- The lending is particularly complex\n- You repay or refinance the loan within [x] months and the lender takes back my commission (a clawback)\n- Your approval expires and you don't tell me whether you want to go ahead\n\nNo surprises. I'll raise any fee as soon as it looks likely, and I'll only charge it once you've agreed. The amount: [fee amount or how it's calculated]."
+    },
+    {
+      "title": "Referrals",
+      "body": "Many of my clients come through accountants and lawyers. If I refer you to someone else for advice I don't give, I may receive a referral fee. I'll tell you if that's the case when I make the referral. [confirm any referral arrangements, including payments to referrers]"
+    },
+    {
+      "title": "Conflicts of interest",
+      "body": "Commission is a potential conflict, so here's how I handle it. I follow an advice process built around your situation and goals, and I recommend the lender that suits you, not the one that pays me more. I keep a record of any conflicts and complete [annual conflict-of-interest training and compliance reviews through Kiwi Adviser Network]."
+    },
+    {
+      "title": "Reliability history",
+      "body": "A reliability event is something that could affect your decision to use me, like legal proceedings or a bankruptcy in the last four years. [Confirm: neither Philippa Impey nor GB Mortgages has been subject to a reliability event.]"
+    },
+    {
+      "title": "My duties to you",
+      "body": "Under the Financial Markets Conduct Act 2013, anyone giving financial advice has to:\n\n- Give priority to your interests, and take all reasonable steps to make sure my advice isn't materially influenced by my own interests\n- Exercise care, diligence and skill\n- Meet the standards of competence, knowledge and skill in the Code of Professional Conduct for Financial Advice Services\n- Meet the standards of ethical behaviour, conduct and client care in the Code\n\nThat's a summary. There's more on the FMA website at [fma.govt.nz](https://www.fma.govt.nz), or just ask me."
+    },
+    {
+      "title": "If something's not right",
+      "body": "Tell me. I'd rather know, and I'll deal with it properly.\n\n- Email your complaint to [complaints contact / email]\n- I'll acknowledge it within [x] working days\n- I'll aim to resolve it within [x] working days, and keep you updated if it takes longer\n\nIf we can't sort it out between us, you can go to the independent dispute resolution scheme [scheme name, e.g. Financial Services Complaints Limited (FSCL)]. It costs you nothing. Contact: [scheme address, phone, email]."
+    }
+  ]
+}

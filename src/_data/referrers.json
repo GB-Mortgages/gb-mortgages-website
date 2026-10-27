@@ -1,0 +1,11 @@
+{
+  "eyebrow": "For accountants & lawyers",
+  "heading": { "text": "Your client's structure,", "accent": "respected.", "full_stop": false },
+  "intro": "Many of my clients come through the accountant or lawyer who already knows them best. When the lending touches a company, a trust and personal borrowing, hand it to me. I'll work alongside the advice you've already given and keep you updated, so you're glad you made the introduction.",
+  "button": "Introduce a client",
+  "steps": [
+    { "title": "You introduce", "text": "A client whose lending needs more than a standard loan. A quick note or call is enough." },
+    { "title": "I get the picture", "text": "I work with you and your client to understand the structures you've already set up." },
+    { "title": "You stay in the loop", "text": "I keep you across the plan, so the lending supports the advice you've given." }
+  ]
+}

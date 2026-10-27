@@ -1,0 +1,25 @@
+{%- set base = "" if page.url == "/" else "/" -%}
+<header id="siteHeader" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-500">
+  <div class="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 sm:px-10">
+    <a href="/" aria-label="{{ site.business_name }} home"><span class="inline-flex flex-col items-end"><img alt="{{ site.business_name }}" class="h-8 w-auto sm:h-9" src="/images/logo-main.png" width="700" height="227"><span class="mt-[1px] text-[9.5px] font-semibold leading-none tracking-[0.01em] text-[#4C6B55] sm:text-[10.5px]">{{ site.tagline }}</span></span></a>
+    <div class="flex items-center gap-8">
+      <nav class="hidden items-center gap-8 lg:flex" aria-label="Main">
+        {%- for item in site.nav %}
+        <a href="{{ base }}{{ item.link }}" class="group relative text-sm font-medium text-[#064530]">{{ item.label }}<span class="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#4C6B55] transition-transform duration-500 group-hover:scale-x-100"></span></a>
+        {%- endfor %}
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="{{ base }}#talk" class="group hidden items-center gap-2 rounded-lg bg-[#F2B705] px-5 py-2.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA] sm:inline-flex">{{ site.header_button }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        <button id="menuBtn" class="p-2 lg:hidden" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" hidden class="border-t border-[#D3CCBD] bg-[#F4F1EA] px-5 pb-6 pt-2 sm:px-10 lg:hidden">
+    <nav class="flex flex-col text-lg font-medium text-[#064530]" aria-label="Mobile">
+      {%- for item in site.nav %}
+      <a href="{{ base }}{{ item.link }}" class="border-b border-[#D3CCBD] py-3">{{ item.label }}</a>
+      {%- endfor %}
+      <a href="{{ base }}#talk" class="mt-5 inline-flex self-start rounded-lg bg-[#F2B705] px-5 py-3 text-sm font-semibold">{{ site.header_button }}</a>
+    </nav>
+  </div>
+</header>
