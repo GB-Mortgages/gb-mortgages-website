@@ -1,18 +1,34 @@
 {
-  "eyebrow_role": "Mortgage adviser",
-  "eyebrow_location": "Queenstown & Southern Lakes, NZ",
-  "headline_lines": [
-    { "text": "I get your", "accent": false, "full_stop": false },
-    { "text": "full picture", "accent": true, "full_stop": true },
-    { "text": "So the lenders", "accent": false, "full_stop": false },
-    { "text": "do too", "accent": false, "full_stop": true }
-  ],
-  "intro": "I look after your business, home and investment lending together. You explain your position once, and I put the full picture in front of the right lender.",
-  "button": "Tell me what you're planning",
-  "secondary_link": "or, see how I'd look at yours",
-  "photo": "/images/philippa-pro.jpg",
-  "photo_alt": "Philippa Impey, mortgage adviser in Queenstown",
   "card_label": "Your adviser",
+  "secondary_link": "or, see how I'd look at yours",
+  "eyebrow_location": "Queenstown & Southern Lakes, NZ test",
+  "intro": "I look after your business, home and investment lending together. You explain your position once, and I put the full picture in front of the right lender.",
+  "eyebrow_role": "Mortgage adviser",
+  "photo": "/images/philippa-pro.jpg",
+  "button": "Tell me what you're planning",
+  "headline_lines": [
+    {
+      "text": "I get your",
+      "accent": false,
+      "full_stop": false
+    },
+    {
+      "text": "full picture",
+      "accent": true,
+      "full_stop": true
+    },
+    {
+      "text": "So the lenders",
+      "accent": false,
+      "full_stop": false
+    },
+    {
+      "text": "do too",
+      "accent": false,
+      "full_stop": true
+    }
+  ],
   "card_name": "Philippa Impey",
-  "card_text": "Over 15 years in banking across property and business lending. Now she looks after yours."
+  "card_text": "Over 15 years in banking across property and business lending. Now she looks after yours.",
+  "photo_alt": "Philippa Impey, mortgage adviser in Queenstown"
 }
