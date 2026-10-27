@@ -78,10 +78,11 @@
         body: new URLSearchParams(new FormData(form)).toString()
       }).then(function (res) {
         if (!res.ok) throw new Error('Form error ' + res.status);
-        form.reset(); note.textContent = form.dataset.thanks; note.style.color = '#064530';
+        window.location.href = '/thanks/';
       }).catch(function () {
-        note.textContent = form.dataset.fail; note.style.color = '#064530';
-      }).finally(function () { btn.disabled = false; });
+        note.textContent = form.dataset.fail; note.style.color = '#064530'; note.style.fontWeight = '600';
+        btn.disabled = false;
+      });
     });
   }
 })();
