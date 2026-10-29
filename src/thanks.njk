@@ -4,12 +4,19 @@ permalink: /thanks/
 pageTitle: "Thanks | GB Mortgages"
 eleventyExcludeFromCollections: true
 ---
-{%- from "macros.njk" import eyebrow -%}
+{%- from "macros.njk" import eyebrow, arrow -%}
 <main class="pt-[72px]">
 <section class="mx-auto max-w-[1440px] px-5 py-28 sm:px-10 lg:py-40">
   {{ eyebrow("Message sent") | safe }}
   <h1 class="mt-8 max-w-3xl font-display text-5xl font-black leading-[0.98] tracking-[-0.035em] text-[#064530] sm:text-6xl">Thanks<span class="text-[#F2B705]">.</span> <span class="font-serif-i font-normal tracking-normal text-[#4C6B55]">I'll be in touch</span><span class="text-[#F2B705]">.</span></h1>
   <p class="mt-8 max-w-xl text-lg leading-relaxed text-[#4F5B53]">{{ contact.thank_you | t | safe }}</p>
-  <a href="/" class="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#F2B705] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors hover:bg-[#064530] hover:text-[#F4F1EA]">Back to home</a>
+  {%- if contact.trail_url %}
+  <div class="mt-10 max-w-xl border-t border-[#D3CCBD] pt-8">
+    <p class="text-base leading-relaxed text-[#4F5B53]">{{ contact.thanks_trail_intro | t | safe }}</p>
+    <a href="{{ contact.trail_url }}" target="_blank" rel="noopener" class="group mt-5 inline-flex items-center gap-3 rounded-lg bg-[#F2B705] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA]">{{ contact.trail_button }} {{ arrow(16, "transition-transform group-hover:translate-x-1") | safe }}<span class="sr-only"> (opens in a new tab)</span></a>
+  </div>
+  {%- endif %}
+  <a href="/" class="mt-10 inline-flex items-center gap-2 text-sm font-medium text-[#064530] underline underline-offset-4 hover:text-[#4C6B55]">Back to home</a>
 </section>
 </main>
+<script>if (window.gtag) gtag('event', 'generate_lead', { form_name: 'enquiry' });</script>

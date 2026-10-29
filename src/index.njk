@@ -290,6 +290,12 @@ permalink: /
       <h2 class="mt-8 font-display text-5xl font-black leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-7xl">{{ heading(f.heading) | safe }}</h2>
       <p class="mt-8 max-w-md text-base leading-relaxed text-[#4F5B53] sm:text-lg">{{ f.intro | t | safe }}</p>
       <div class="mt-10 flex items-center gap-4 border-t border-[#D3CCBD] pt-6"><span class="flex h-12 w-12 items-center justify-center bg-[#F2B705] font-display text-xl font-black tracking-[-0.02em] text-[#064530]" aria-hidden="true">PI</span><div><p class="font-semibold">{{ site.adviser_name }}</p><p class="text-sm text-[#4F5B53]">{{ f.contact_line }}</p></div></div>
+      {%- if f.trail_url %}
+      <div class="mt-10 border-t border-[#D3CCBD] pt-6">
+        <p class="max-w-md text-base leading-relaxed text-[#4F5B53]">{{ f.trail_intro | t | safe }}</p>
+        <a href="{{ f.trail_url }}" target="_blank" rel="noopener" class="group mt-5 inline-flex items-center gap-3 rounded-lg border border-[#064530] px-6 py-3.5 text-sm font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#064530] hover:text-[#F4F1EA]">{{ f.trail_button }} {{ arrow(16, "transition-transform group-hover:translate-x-1") | safe }}<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      {%- endif %}
     </div>
     <div class="lg:col-span-6 lg:col-start-7">
       <div class="border border-[#D3CCBD] bg-[#F4F1EA] p-6 sm:p-12">

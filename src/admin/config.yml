@@ -240,6 +240,10 @@ collections:
           - { label: "Message if fields are missing", name: "error_message", widget: "string" }
           - { label: "Thank-you message", name: "thank_you", widget: "string" }
           - { label: "Message if sending fails", name: "send_error", widget: "string" }
+          - { label: "Trail application, intro text", name: "trail_intro", widget: "text", required: false }
+          - { label: "Trail application, button text", name: "trail_button", widget: "string", required: false }
+          - { label: "Trail application, link", name: "trail_url", widget: "string", required: false, hint: "Leave empty to hide the button." }
+          - { label: "Trail application, text on the thank-you page", name: "thanks_trail_intro", widget: "text", required: false }
 
   - name: "disclosure"
     label: "Disclosure statement"
@@ -281,6 +285,7 @@ collections:
           - { label: "Location", name: "location", widget: "string" }
           - { label: "Areas you serve (for search engines)", name: "areas_served", widget: "list", field: { label: "Area", name: "area", widget: "string" } }
           - { label: "FSP number", name: "fsp_number", widget: "string" }
+          - { label: "Google Analytics measurement ID", name: "google_analytics_id", widget: "string", required: false, hint: "Starts with G-. Leave empty to turn analytics off." }
           - { label: "Search engine title (home page)", name: "seo_title", widget: "string", hint: "About 60 characters." }
           - { label: "Search engine description (home page)", name: "seo_description", widget: "text", hint: "About 150 to 160 characters." }
           - { label: "Footer text", name: "footer_blurb", widget: "text" }

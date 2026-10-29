@@ -1,6 +1,10 @@
 {
   "eyebrow": "Start here",
-  "heading": { "text": "Tell your story once.", "accent": "I'll take it from here", "full_stop": true },
+  "heading": {
+    "text": "Tell your story once.",
+    "accent": "I'll take it from here",
+    "full_stop": true
+  },
   "intro": "A few lines is plenty. I'll read it myself and come back to you directly to set up a proper conversation.",
   "contact_line": "Your single point of contact",
   "field_name_label": "Your name",
@@ -17,5 +21,9 @@
   "button": "Send to Philippa",
   "error_message": "Add your name, email and a line about your lending.",
   "thank_you": "Thanks. I've got your message and I'll be in touch within one working day.",
-  "send_error": "Something went wrong. Please email or call me directly."
+  "send_error": "Something went wrong. Please email or call me directly.",
+  "trail_intro": "Ready to get started? You can begin your application now.",
+  "trail_button": "Start your application",
+  "trail_url": "https://gbmortgages.gettrail.com/Account/register",
+  "thanks_trail_intro": "Want a head start? Begin your application now and I'll have your details ready when we talk."
 }
