@@ -27,23 +27,41 @@
   var f = document.getElementById('calc');
   if (f) {
     var nz = new Intl.NumberFormat('en-NZ', { style: 'currency', currency: 'NZD', maximumFractionDigits: 0 });
-    var pr = document.getElementById('c-price'), dp = document.getElementById('c-dep'), r = document.getElementById('c-rate'), t = document.getElementById('c-term');
+    var pr = document.getElementById('c-price'), dp = document.getElementById('c-dep'), r = document.getElementById('c-rate'), t = document.getElementById('c-term'), ioIn = document.getElementById('c-io');
+    var ioWrap = document.getElementById('c-io-wrap'), afterRow = document.getElementById('c-after-row');
     var names = { '52': 'weekly', '26': 'fortnightly', '12': 'monthly' };
     var fill = function (el) { var p = (el.value - el.min) / (el.max - el.min) * 100; el.style.background = 'linear-gradient(to right,#F2B705 ' + p + '%,#3F3F3F ' + p + '%)'; };
     var set = function (id, v) { document.getElementById(id).textContent = v; };
+    // Standard repayment for a loan of P over N periods at periodic rate i
+    var pmt = function (P, i, N) { if (P <= 0 || N <= 0) return 0; return i === 0 ? P / N : P * i / (1 - Math.pow(1 + i, -N)); };
     var calc = function () {
       if (+dp.value > +pr.value) dp.value = pr.value;
       var price = +pr.value, dep = +dp.value, P = Math.max(price - dep, 0), ann = +r.value / 100, yrs = +t.value;
       var n = +f.querySelector('input[name="c-freq"]:checked').value;
       var io = f.querySelector('input[name="c-type"]:checked').value === 'io';
-      var i = ann / n, N = yrs * n, pay;
-      if (P === 0) pay = 0; else if (io) pay = P * i; else pay = i === 0 ? P / N : P * i / (1 - Math.pow(1 + i, -N));
-      var interest = io ? pay * N : pay * N - P;
+      var i = ann / n, N = yrs * n, pay, interest;
+      ioWrap.hidden = !io; afterRow.hidden = !io;
+      if (io) {
+        // Interest only for the chosen period (never the whole term), then principal and interest
+        var ioYrs = Math.min(+ioIn.value, Math.max(yrs - 1, 0));
+        var ioN = ioYrs * n, restN = N - ioN;
+        pay = P * i;
+        var after = pmt(P, i, restN);
+        interest = pay * ioN + (after * restN - P);
+        set('c-io-out', ioYrs + (ioYrs === 1 ? ' year' : ' years'));
+        set('c-after-label', 'Then, from year ' + (ioYrs + 1) + ' (principal and interest)');
+        set('c-after', nz.format(Math.round(after)) + ' ' + names[n]);
+        set('c-label', 'Estimated ' + names[n] + ' repayment, interest only');
+        fill(ioIn);
+      } else {
+        pay = pmt(P, i, N);
+        interest = pay * N - P;
+        set('c-label', 'Estimated ' + names[n] + ' repayment');
+      }
       set('c-price-out', nz.format(price));
       set('c-dep-out', nz.format(dep));
       set('c-rate-out', (+r.value).toFixed(2) + '%');
       set('c-term-out', yrs + (yrs === 1 ? ' year' : ' years'));
-      set('c-label', 'Estimated ' + names[n] + ' repayment');
       set('c-pay', nz.format(Math.round(pay)));
       set('c-loan', nz.format(P));
       set('c-lvr', (price ? P / price * 100 : 0).toFixed(1) + '%');
@@ -85,4 +103,11 @@
       });
     });
   }
+
+  // Google Analytics events (only run when analytics is switched on)
+  var track = function (name, params) { if (window.gtag) window.gtag('event', name, params || {}); };
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { a.addEventListener('click', function () { track('contact_click', { method: 'phone' }); }); });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.addEventListener('click', function () { track('contact_click', { method: 'email' }); }); });
+  var calcForm = document.getElementById('calc'), calcUsed = false;
+  if (calcForm) calcForm.addEventListener('input', function () { if (!calcUsed) { calcUsed = true; track('calculator_use'); } });
 })();

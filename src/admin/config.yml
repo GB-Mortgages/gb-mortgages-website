@@ -135,6 +135,7 @@ collections:
             options:
               - { label: "Principal and interest", value: "principal_and_interest" }
               - { label: "Interest only", value: "interest_only" }
+          - { label: "Starting interest-only period (years)", name: "default_io_years", widget: "number", value_type: "int", min: 1, max: 5, hint: "Used when Interest only is chosen. After this, the loan switches to principal and interest." }
           - { label: "Button text", name: "button", widget: "string" }
           - { label: "Disclaimer", name: "disclaimer", widget: "text" }
 
