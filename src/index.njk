@@ -173,6 +173,10 @@ permalink: /
               <input id="c-io" type="range" min="1" max="5" step="1" value="{{ c.default_io_years }}" class="calc-range mt-4 w-full">
               <p class="mt-3 text-xs leading-relaxed text-[#4F5B53]">After this, the loan switches to principal and interest for the rest of the term.</p>
             </div>
+            <div class="w-full">
+              <div class="flex items-baseline justify-between gap-4"><label for="c-extra" class="text-sm text-[#4F5B53]">Extra per repayment</label><span id="c-extra-out" class="font-display text-[1.4rem] font-medium text-[#064530]"></span></div>
+              <input id="c-extra" type="range" min="0" max="2000" step="10" value="{{ c.default_extra }}" class="calc-range mt-4 w-full">
+            </div>
           </div>
         </form>
         <div class="flex flex-col justify-between gap-10 rounded-lg bg-[#064530] p-8 text-[#F4F1EA]" aria-live="polite">
@@ -183,11 +187,24 @@ permalink: /
               <div class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">Loan amount</dt><dd id="c-loan" class="font-medium"></dd></div>
               <div class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">LVR</dt><dd id="c-lvr" class="font-medium"></dd></div>
               <div id="c-after-row" class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"{% if c.default_type != "interest_only" %} hidden{% endif %}><dt id="c-after-label" class="text-[#DCE2DA]">Then, principal and interest</dt><dd id="c-after" class="font-medium"></dd></div>
-              <div class="flex justify-between gap-4 py-3.5"><dt class="text-[#DCE2DA]">Total interest (over term)</dt><dd id="c-interest" class="font-medium"></dd></div>
+              <div class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">Total interest (over term)</dt><dd id="c-interest" class="font-medium"></dd></div>
+              <div id="c-saved-row" class="flex justify-between gap-4 border-b border-[#F4F1EA]/15 py-3.5"><dt class="text-[#DCE2DA]">Interest saved with extra</dt><dd id="c-saved" class="font-medium text-[#F2B705]"></dd></div>
+              <div id="c-time-row" class="flex justify-between gap-4 py-3.5"><dt class="text-[#DCE2DA]">Paid off sooner by</dt><dd id="c-time" class="font-medium text-[#F2B705]"></dd></div>
             </dl>
           </div>
           <a href="#talk" class="flex w-full items-center justify-center gap-2 rounded-md bg-[#F2B705] px-6 py-4 text-base font-semibold text-[#064530] transition-colors duration-300 hover:bg-[#F4F1EA]">{{ c.button }} <span aria-hidden="true">→</span></a>
         </div>
+      </div>
+      <div class="mt-10 border-t border-[#D3CCBD] pt-8">
+        <div class="flex flex-wrap items-baseline justify-between gap-4">
+          <h3 class="font-display text-2xl font-medium text-[#064530]">{{ c.chart_heading }}</h3>
+          <div class="flex flex-wrap items-center gap-5 text-sm text-[#4F5B53]">
+            <span class="inline-flex items-center gap-2"><span class="h-[3px] w-6 bg-[#9FB3A3]"></span>Without extra</span>
+            <span class="inline-flex items-center gap-2"><span class="h-[3px] w-6 bg-[#064530]"></span>With extra</span>
+            <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-[#F2B705] ring-2 ring-[#064530]"></span>Paid off</span>
+          </div>
+        </div>
+        <div id="c-chart" class="relative mt-6 select-none" role="img" aria-label="Loan balance over time"></div>
       </div>
     </div>
     <p class="mt-5 text-xs text-[#4F5B53]">{{ c.disclaimer | t | safe }}</p>
