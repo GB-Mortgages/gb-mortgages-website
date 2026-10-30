@@ -1,21 +1,45 @@
 {
   "eyebrow": "About me",
-  "heading": { "text": "I spent over 15 years inside the banks.", "accent": "Now I'm on your side of the table", "full_stop": true },
+  "heading": {
+    "text": "I spent over 15 years inside the banks.",
+    "accent": "Now I'm on your side of the table",
+    "full_stop": true
+  },
   "photo": "/images/philippa-casual.jpg",
-  "photo_alt": "Philippa Impey outdoors with a coffee",
+  "photo_alt": "Philippa Impey working at a café in Queenstown",
   "paragraphs": [
     "I'm Philippa. I worked in banking for over 15 years, including Business Partner and Commercial Partner roles at ASB and BNZ. That's where I learned how lenders assess an application, what they need to see and why some deals stall.",
     "I own property myself, so I understand it from your side as well as the lender's. And I keep a small client list on purpose. It means I know your story, I stay involved after settlement and you never get passed down the line."
   ],
   "stats": [
-    { "figure": "15+", "text": "years in banking, on property and business lending" },
-    { "figure": "ASB & BNZ", "text": "former Business Partner and Commercial Partner" },
-    { "figure": "Multiple", "text": "lenders, so you're not limited to one lender's products" },
-    { "figure": "1", "text": "adviser. You deal with me, not a team" }
+    {
+      "figure": "15+",
+      "text": "years in banking, on property and business lending"
+    },
+    {
+      "figure": "ASB & BNZ",
+      "text": "former Business Partner and Commercial Partner"
+    },
+    {
+      "figure": "Multiple",
+      "text": "lenders, so you're not limited to one lender's products"
+    },
+    {
+      "figure": "1",
+      "text": "adviser. You deal with me, not a team"
+    }
   ],
   "values_title": "What GB stands for",
   "values": [
-    { "word": "Genuine", "line": "I care, and I'll do right by you.", "text": "Honest answers, including the ones you weren't hoping for. Your information treated with care. I do what I say I'll do." },
-    { "word": "Bold", "line": "I pull every lever available for you.", "text": "I ask the question others won't, of you and of the lender, and I don't take the first answer if it isn't right for you." }
+    {
+      "word": "Genuine",
+      "line": "I care, and I'll do right by you.",
+      "text": "Honest answers, including the ones you weren't hoping for. Your information treated with care. I do what I say I'll do."
+    },
+    {
+      "word": "Bold",
+      "line": "I pull every lever available for you.",
+      "text": "I ask the question others won't, of you and of the lender, and I don't take the first answer if it isn't right for you."
+    }
   ]
 }
