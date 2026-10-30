@@ -37,3 +37,6 @@ button:focus-visible, a:focus-visible, .field:focus-visible { outline: 2px solid
 .calc-seg label:has(input:checked) { background: var(--ink); color: var(--bone); }
 .calc-seg label:has(input:focus-visible) { outline: 2px solid var(--saffron); outline-offset: -3px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Make the hidden attribute win over layout classes like flex */
+[hidden] { display: none !important; }
