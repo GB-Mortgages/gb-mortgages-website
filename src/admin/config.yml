@@ -136,6 +136,8 @@ collections:
               - { label: "Principal and interest", value: "principal_and_interest" }
               - { label: "Interest only", value: "interest_only" }
           - { label: "Starting interest-only period (years)", name: "default_io_years", widget: "number", value_type: "int", min: 1, max: 5, hint: "Used when Interest only is chosen. After this, the loan switches to principal and interest." }
+          - { label: "Starting extra per repayment ($)", name: "default_extra", widget: "number", value_type: "int", min: 0, max: 2000, step: 10 }
+          - { label: "Graph heading", name: "chart_heading", widget: "string" }
           - { label: "Button text", name: "button", widget: "string" }
           - { label: "Disclaimer", name: "disclaimer", widget: "text" }
 
