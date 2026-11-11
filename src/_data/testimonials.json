@@ -1,6 +1,10 @@
 {
   "eyebrow": "What clients say",
-  "heading": { "text": "In your corner.", "accent": "In their words", "full_stop": true },
+  "heading": {
+    "text": "In your corner.",
+    "accent": "In their words",
+    "full_stop": true
+  },
   "items": [
     {
       "label": "Client file · Tourism",
@@ -13,6 +17,12 @@
       "pull_quote": "Then I met Philly, and everything changed.",
       "quote": "From the first meeting with Philippa it was clear that she is a stand-out. Previous meetings with large banks offered little-to-no hope of my dream to start a business in the Southern Lakes becoming a reality. Then I met Philly, and everything changed. She listened to the opportunity, dug into the details and provided invaluable advice, then jumped on board and has been a part of our business ever since. Totally dependable and has always, always gone out of her way to get things done, even when timeframes were insanely tight.",
       "who": "Local construction company owner, property investor & developer"
+    },
+    {
+      "label": "Client file · Business",
+      "pull_quote": "She backed us to deliver what we committed to.",
+      "quote": "Philly was our primary banking partner who looked after our accounts in her previous role, but from the start she was far more than a routine banking contact. She embraced our vision and our big ideas, and she backed us to deliver what we committed to. That support was tested sooner than we expected when we pursued a significant acquisition. Philly helped secure the funding by clearly setting out what the deal needed to cross the line. She championed us as a key customer and then kept working with us, building financial packages and structures that were fit for purpose. What sets Philly apart is her belief that business is about relationships. She takes the time to understand the people she works with, and she delivers for them.",
+      "who": "[Role, business type]"
     }
   ]
 }
