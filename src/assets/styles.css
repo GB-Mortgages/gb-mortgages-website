@@ -40,3 +40,9 @@ button:focus-visible, a:focus-visible, .field:focus-visible { outline: 2px solid
 
 /* Make the hidden attribute win over layout classes like flex */
 [hidden] { display: none !important; }
+
+/* Testimonial carousel: hide the scrollbar but keep swipe and scroll */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.carousel-dot { width: 10px; height: 10px; border-radius: 9999px; background: #D3CCBD; transition: background-color .2s, width .2s; }
+.carousel-dot[aria-current="true"] { width: 28px; background: #064530; }

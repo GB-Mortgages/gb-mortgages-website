@@ -169,4 +169,51 @@
   document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.addEventListener('click', function () { track('contact_click', { method: 'email' }); }); });
   var calcForm = document.getElementById('calc'), calcUsed = false;
   if (calcForm) calcForm.addEventListener('input', function () { if (!calcUsed) { calcUsed = true; track('calculator_use'); } });
+
+  // Testimonial carousel: moves on every 7 seconds, pauses on hover, focus,
+  // touch or the Pause button, and stays still for people who prefer less motion.
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('[data-track]'), slides = track.children;
+    var dotsWrap = root.querySelector('[data-dots]'), pauseBtn = root.querySelector('[data-pause]');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var userPaused = reduced, hover = false, timer = null, DELAY = 7000;
+    if (reduced) { pauseBtn.textContent = 'Play'; pauseBtn.setAttribute('aria-pressed', 'true'); }
+    function step() { return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth; }
+    function pages() { var visible = Math.max(1, Math.round(track.clientWidth / step())); return Math.max(1, slides.length - visible + 1); }
+    function current() { return Math.round(track.scrollLeft / step()); }
+    function go(i) { var n = pages(); i = (i + n) % n; track.scrollTo({ left: i * step(), behavior: reduced ? 'auto' : 'smooth' }); }
+    function drawDots() {
+      var n = pages(); dotsWrap.innerHTML = '';
+      root.querySelector('[data-prev]').parentElement.parentElement.style.display = n > 1 ? '' : 'none';
+      for (var i = 0; i < n; i++) {
+        var d = document.createElement('button'); d.type = 'button'; d.className = 'carousel-dot';
+        d.setAttribute('aria-label', 'Show quote ' + (i + 1)); d.dataset.i = i;
+        d.addEventListener('click', function () { go(+this.dataset.i); });
+        dotsWrap.appendChild(d);
+      }
+      mark();
+    }
+    function mark() { var c = current(); dotsWrap.querySelectorAll('button').forEach(function (d, i) { d.setAttribute('aria-current', i === c ? 'true' : 'false'); }); }
+    function tick() { if (!userPaused && !hover && pages() > 1) go(current() + 1); }
+    function start() { clearInterval(timer); timer = setInterval(tick, DELAY); }
+    root.querySelector('[data-prev]').addEventListener('click', function () { go(current() - 1); start(); });
+    root.querySelector('[data-next]').addEventListener('click', function () { go(current() + 1); start(); });
+    pauseBtn.addEventListener('click', function () {
+      userPaused = !userPaused; pauseBtn.textContent = userPaused ? 'Play' : 'Pause';
+      pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false'); start();
+    });
+    root.addEventListener('mouseenter', function () { hover = true; });
+    root.addEventListener('mouseleave', function () { hover = false; });
+    root.addEventListener('focusin', function () { hover = true; });
+    root.addEventListener('focusout', function () { hover = false; });
+    track.addEventListener('touchstart', function () { hover = true; }, { passive: true });
+    track.addEventListener('touchend', function () { setTimeout(function () { hover = false; }, 4000); }, { passive: true });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(mark); }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+    });
+    window.addEventListener('resize', drawDots);
+    drawDots(); start();
+  });
 })();
