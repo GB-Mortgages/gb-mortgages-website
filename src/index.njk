@@ -292,15 +292,25 @@ permalink: /
 <section class="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:py-36">
   {{ eyebrow(testimonials.eyebrow) | safe }}
   <h2 class="mt-8 font-display text-4xl font-black leading-[0.98] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{{ heading(testimonials.heading) | safe }}</h2>
-  <div class="mt-16 grid gap-px border border-[#D3CCBD] bg-[#D3CCBD] lg:grid-cols-2">
-    {%- for q in testimonials.items %}
-    <figure class="m-0 flex h-full flex-col bg-[#F4F1EA] p-7 sm:p-12">
-      <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span>{{ q.label }}</span><span class="text-[#4C6B55]">{{ loop.index | pad2 }}</span></div>
-      <p class="mt-10 text-2xl font-medium leading-snug tracking-tight text-[#064530] sm:text-3xl"><span class="text-[#F2B705]">“</span>{{ q.pull_quote | t | safe }}<span class="text-[#F2B705]">”</span></p>
-      <blockquote class="mb-10 mt-6 text-base leading-relaxed text-[#4F5B53]">{{ q.quote | t | safe }}</blockquote>
-      <figcaption class="mt-auto flex items-center gap-3 border-t border-[#D3CCBD] pt-6 text-sm font-semibold text-[#064530]"><span class="h-px w-8 bg-[#F2B705]"></span>{{ q.who | t | safe }}</figcaption>
-    </figure>
-    {%- endfor %}
+  <div class="mt-16" data-carousel aria-roledescription="carousel" aria-label="Client quotes">
+    <div class="no-scrollbar flex snap-x snap-mandatory gap-px overflow-x-auto border border-[#D3CCBD] bg-[#D3CCBD] scroll-smooth" data-track tabindex="0">
+      {%- for q in testimonials.items %}
+      <figure class="m-0 flex w-full shrink-0 snap-start flex-col bg-[#F4F1EA] p-7 sm:p-12 lg:w-[calc(50%-0.5px)]" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ loop.length }}">
+        <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-[#4F5B53]"><span>{{ q.label }}</span><span class="text-[#4C6B55]">{{ loop.index | pad2 }}</span></div>
+        <p class="mt-10 text-2xl font-medium leading-snug tracking-tight text-[#064530] sm:text-3xl"><span class="text-[#F2B705]">“</span>{{ q.pull_quote | t | safe }}<span class="text-[#F2B705]">”</span></p>
+        <blockquote class="mb-10 mt-6 text-base leading-relaxed text-[#4F5B53]">{{ q.quote | t | safe }}</blockquote>
+        <figcaption class="mt-auto flex items-center gap-3 border-t border-[#D3CCBD] pt-6 text-sm font-semibold text-[#064530]"><span class="h-px w-8 bg-[#F2B705]"></span>{{ q.who | t | safe }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    <div class="mt-6 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-2" data-dots></div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-pause class="inline-flex h-11 items-center gap-2 rounded-lg border border-[#D3CCBD] px-4 text-sm font-medium text-[#064530] transition-colors hover:border-[#064530]" aria-pressed="false">Pause</button>
+        <button type="button" data-prev class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#D3CCBD] text-[#064530] transition-colors hover:border-[#064530]" aria-label="Previous quote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+        <button type="button" data-next class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#D3CCBD] text-[#064530] transition-colors hover:border-[#064530]" aria-label="Next quote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
   </div>
 </section>
 
