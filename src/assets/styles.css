@@ -26,6 +26,10 @@ button:focus-visible, a:focus-visible, .field:focus-visible { outline: 2px solid
 .disc-body ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 .disc-body li { position: relative; padding-left: 1.25rem; }
 .disc-body li::before { content: "\2014"; position: absolute; left: 0; color: #4C6B55; }
+.disc-body ol { margin: 0; padding-left: 1.25rem; list-style: decimal; display: flex; flex-direction: column; gap: 0.5rem; }
+.disc-body ol li { padding-left: 0.25rem; }
+.disc-body ol li::before { content: none; }
+.disc-body ol li::marker { color: #4C6B55; font-weight: 600; }
 #discNav a.active { color: #064530; font-weight: 600; }
 .calc-range { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 999px; background: #3F3F3F; outline: none; border: 1px solid rgba(6,69,48,0.25); }
 .calc-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--saffron); border: 0; cursor: pointer; }
