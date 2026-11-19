@@ -24,7 +24,7 @@ eleventyComputed:
     <nav class="hidden lg:col-span-3 lg:block" aria-label="Disclosure sections">
       <ul id="discNav" class="sticky top-28 space-y-2 border-l border-[#D3CCBD] pl-5 text-sm">
         {%- for s in d.sections %}
-        <li><a href="#d-{{ loop.index }}" data-go="d-{{ loop.index }}" class="text-left text-[#4F5B53] transition-colors hover:text-[#064530]"><span class="mr-2 text-[#4C6B55]">{{ loop.index | pad2 }}</span>{{ s.title }}</a></li>
+        <li><a href="#d-{{ loop.index }}" data-go="d-{{ loop.index }}" class="flex gap-2 text-left text-[#4F5B53] transition-colors hover:text-[#064530]"><span class="w-5 shrink-0 tabular-nums text-[#4C6B55]">{{ loop.index | pad2 }}</span><span>{{ s.title }}</span></a></li>
         {%- endfor %}
       </ul>
     </nav>
