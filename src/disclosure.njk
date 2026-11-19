@@ -15,7 +15,7 @@ eleventyComputed:
       <h1 class="mt-6 font-display text-4xl font-black leading-[1.02] tracking-[-0.03em] text-[#064530] sm:text-5xl sm:leading-[1] lg:text-6xl">{{ d.heading | t | safe }}<span class="text-[#F2B705]">.</span></h1>
     </div>
     <div class="lg:col-span-4 lg:pt-10">
-      <p class="text-base leading-relaxed text-[#4F5B53]">{{ d.intro | t | safe }} Last updated {{ d.last_updated | t | safe }}.</p>
+      <p class="text-base leading-relaxed text-[#4F5B53]">{{ d.intro | t | safe }}{% if d.last_updated %} Last updated {{ d.last_updated | t | safe }}.{% endif %}</p>
     </div>
   </div>
 </section>
