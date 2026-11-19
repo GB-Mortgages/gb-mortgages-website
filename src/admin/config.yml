@@ -270,6 +270,28 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [] }
 
+  - name: "privacy"
+    label: "Privacy policy"
+    editor: { preview: false }
+    files:
+      - label: "Privacy policy page"
+        name: "privacy"
+        file: "src/_data/privacy.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading (a yellow full stop is added)", name: "heading", widget: "text" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Last updated", name: "last_updated", widget: "string", hint: "For example: 1 November 2026" }
+          - { label: "Search engine description", name: "seo_description", widget: "text" }
+          - label: "Sections (numbered automatically)"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [] }
+
   - name: "settings"
     label: "Contact details and settings"
     editor: { preview: false }
