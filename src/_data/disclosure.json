@@ -1,53 +1,61 @@
 {
   "eyebrow": "Disclosure statement",
-  "heading": "Before we talk about your lending, here's how I work and how I'm paid",
-  "intro": "You're entitled to know this up front. It's written plainly, and if anything isn't clear, ask me.",
-  "last_updated": "[date]",
-  "seo_description": "How Philippa Impey of GB Mortgages works, how she's paid, the lenders she works with and what to do if something's not right.",
+  "heading": "Important information about GB Mortgages",
+  "intro": "You're entitled to know how we work and how we're paid before you decide to use our services. If anything isn't clear, ask us.",
+  "last_updated": "",
+  "seo_description": "GB Mortgages public disclosure statement: our licence, the advice we give, the lenders we may recommend, our fees and commissions, conflicts of interest and how to make a complaint.",
   "sections": [
     {
-      "title": "Who I am and who I work under",
-      "body": "I'm Philippa Impey, and GB Mortgages is my business. I give mortgage and lending advice as a financial adviser. I work under the Financial Advice Provider licence held by [Kiwi Adviser Network Limited, FSP number], issued by the Financial Markets Authority (FMA).\n\n- Business: GB Mortgages Limited (FSP1013399, NZBN 9429053746016)\n- Adviser: Philippa Impey (FSP1013396)\n- Email: philly@gbmortgages.co.nz\n- Phone: +64 27 424 5544\n- Address: [physical / postal address]"
+      "title": "About GB Mortgages",
+      "body": "GB Mortgages Limited (trading as GB Mortgages) holds a Financial Advice Provider licence issued by the Financial Markets Authority to provide financial advice services. Our Financial Service Provider (FSP) number is FSP1013399. Our financial adviser is Philippa Impey (FSP1013396).\n\n**Our office contact details**\n\n- Address: 45 Bay View Road, Kelvin Heights, Queenstown 9300\n- Phone: 027 424 5544\n- Email: hello@gbmortgages.co.nz\n- Website: www.gbmortgages.co.nz"
     },
     {
-      "title": "What I can help with",
-      "body": "I give advice on borrowing. That covers lending for:\n\n- Business and commercial purposes, including company and trust borrowing\n- Residential property, including investment property\n- Personal purposes, where it's part of your wider lending picture\n\nThe products I can advise on: [confirm list, e.g. residential lending (purchase, top-up, construction, refix, restructure, bridging), business and commercial lending (working capital, business purchase, commercial property), asset finance]."
+      "title": "Nature and scope of our financial advice services",
+      "body": "**Our services**\n\nMortgage and lending advice (debt management), including borrowing for:\n\n- your home\n- property investment\n- business and commercial purposes\n\n**Products we can give advice about**\n\n- Home loans: purchase, refinance, top-up, construction, refix and restructure, and bridging finance\n- Investment property loans\n- Business and commercial lending: commercial property, working capital, business purchase, development finance and asset finance\n- Personal lending, including personal loans and vehicle finance\n\nWe do not give advice on insurance, investments (including KiwiSaver), tax, or legal matters. If you need advice in these areas, we can suggest a suitable specialist."
     },
     {
-      "title": "What I don't advise on",
-      "body": "I stick to lending. I don't give advice on:\n\n- Legal matters, trusts, wills or estate planning\n- Tax or accounting\n- Insurance, personal or general\n- Investment products like shares, bonds or managed funds\n\nIf you need advice in these areas, talk to a specialist. I'm happy to work alongside your accountant or lawyer, or point you to someone if you don't have one."
+      "title": "Lenders we may recommend",
+      "body": "**Lenders we are currently accredited with**\n\n- Banks: ANZ, ASB, BNZ, The Co-operative Bank\n- Non-bank and specialist lenders: Avanti Finance, Basecorp Finance, Liberty, Pepper Money, Prospa, Unity, Vincent Capital\n\n**Lenders to be confirmed** (accreditation in progress; we only recommend a lender once we are accredited with it)\n\n- Banks: Westpac, Kiwibank, TSB, SBS Bank, Heartland Bank, Bank of China, China Construction Bank, AIA Go Home Loans\n- Non-bank and specialist lenders: ASAP Finance, Bizcap, Bluestone, CFML, Cressida Capital, DBR, Finbase, First Mortgage Trust, Funding Partners, Lendr, Pallas Capital, Plus Finance, Resimac, ScotPac, Southern Cross Partners, Xceda"
     },
     {
-      "title": "The lenders I work with",
-      "body": "I work across multiple lenders, so you're not limited to one lender's products. I don't have access to every lender or product in New Zealand. The lenders I currently work with are: [list of lenders available through the aggregator]."
+      "title": "Our fees",
+      "body": "For most home and investment property loans we do not charge a fee, because the lender pays us a commission when your loan settles.\n\nWe may charge you a one-off fee in these situations:\n\n- **When we do not receive commission from the lender.** This can happen with some business, commercial and non-bank lenders, or if you ask us to arrange a product outside our usual arrangements with our lenders. Any fee will be based on an estimate of the time spent providing the advice, and agreed with you in writing before we complete the work.\n- **When we have to repay commission to the lender.** If, within 28 months of your loan being drawn down, it is fully or partly repaid or its terms are materially changed, and the lender requires us to repay our commission, we may charge you a one-off fee. The fee will be no more than $2,500, calculated at $250 an hour for the time we spent providing advice on that loan, and will never be more than the commission we have to repay.\n\nFor business and commercial lending, any fee is set out in a letter of engagement before we start. If a lender also pays us commission, we will tell you and reduce the fee by that amount.\n\nYou will be invoiced for any one-off fee and given 7 days to pay. We are not GST registered, so no GST is added."
     },
     {
-      "title": "How I'm paid",
-      "body": "Straight answer: in most cases, the lender pays me, not you.\n\nIf you take out or change a loan after my advice, the lender usually pays a commission at settlement. This is generally [x% to x%] of the loan amount. Some lenders also pay an ongoing trail commission of [x% to x%] of the loan balance, and some pay a fee when I help you refix. Before you apply, I'll tell you which lender is paying what for your loan."
+      "title": "Other costs",
+      "body": "Costs charged by others, such as lender fees, valuations and legal fees, are payable by you to those parties. We will tell you about any we know of before you proceed."
     },
     {
-      "title": "When I might charge you a fee",
-      "body": "For most residential lending, I don't charge you a fee. Business and commercial lending can be different, because some lenders in that space don't pay commission. If a fee applies, I'll scope it out with you after our first meeting and we'll agree it in writing before I do the work. Any commission I do receive comes off that fee.\n\nA fee might also apply if:\n\n- The lender doesn't pay an upfront commission\n- The work is advice-only, or a lot of work that doesn't end in a loan\n- The lending is particularly complex\n- You repay or refinance the loan within [x] months and the lender takes back my commission (a clawback)\n- Your approval expires and you don't tell me whether you want to go ahead\n\nNo surprises. I'll raise any fee as soon as it looks likely, and I'll only charge it once you've agreed. The amount: [fee amount or how it's calculated]."
+      "title": "Commissions",
+      "body": "When your loan settles, the lender pays us a commission. The lender pays this; it is not added to your loan. We keep the full commission; none of it is shared with our aggregator, Kiwi Adviser Network. Instead we pay KAN a fixed monthly fee for compliance support, systems and lender access, which does not change with the lender we recommend or the number of loans we arrange.\n\n- **Initial commission:** a one-off payment of between 0.55% and 0.90% of the amount borrowed, depending on the lender.\n- **Ongoing commission:** some lenders pay an ongoing (trail) commission of between 0.15% and 0.20% a year of the outstanding loan balance. Not all lenders pay ongoing commission.\n\nWe will tell you the exact commission for your loan before you decide to proceed."
     },
     {
-      "title": "Referrals",
-      "body": "Many of my clients come through accountants and lawyers. If I refer you to someone else for advice I don't give, I may receive a referral fee. I'll tell you if that's the case when I make the referral. [confirm any referral arrangements, including payments to referrers]"
+      "title": "Conflicts of interest or other incentives",
+      "body": "Commission rates differ between lenders and loan types, which could be seen as creating an incentive to recommend one lender over another. We do not have volume targets or sales incentives with any lender. Our adviser previously worked at ASB and BNZ; she has no ongoing financial interest in either bank, and we recommend lenders based on your needs.\n\nOccasionally we refer clients to trusted partners, such as insurance advisers, lawyers, accountants and personal finance companies. Most of these arrangements involve no payment, but in some cases we may receive a referral fee. If so, we will tell you before you proceed."
     },
     {
-      "title": "Conflicts of interest",
-      "body": "Commission is a potential conflict, so here's how I handle it. I follow an advice process built around your situation and goals, and I recommend the lender that suits you, not the one that pays me more. I keep a record of any conflicts and complete [annual conflict-of-interest training and compliance reviews through Kiwi Adviser Network]."
+      "title": "How we manage any conflicts of interest",
+      "body": "To make sure your interests come first:\n\n- We follow a set advice process, and record why the lending we recommend suits your goals and circumstances.\n- Our adviser completes ongoing training, including on managing conflicts of interest.\n- We keep registers of conflicts of interest and of gifts and incentives, and review them at least quarterly.\n- Our advice files are reviewed independently by Kiwi Adviser Network at least every six months."
+    },
+    {
+      "title": "Our duties and obligations to you",
+      "body": "GB Mortgages, and anyone who gives financial advice on our behalf, has duties under the Financial Markets Conduct Act 2013 (sections 431I, 431K, 431L and 431M). We must:\n\n- meet the standards of competence, knowledge and skill in the Code of Professional Conduct for Financial Advice Services\n- give priority to your interests\n- exercise care, diligence and skill\n- meet the standards of ethical behaviour, conduct and client care in the Code.\n\nMore information is available from the FMA at www.fma.govt.nz."
+    },
+    {
+      "title": "Our internal complaints process",
+      "body": "If you have a problem, concern, or complaint about any part of our advice or service, please tell us so that we can try to fix the problem.\n\nOur internal complaints manager is Philippa Impey, who can be reached at hello@gbmortgages.co.nz or 027 424 5544.\n\nOur internal complaints handling process is as follows:\n\n1. Tell us about your complaint by email, phone or in writing, or use our [online complaint form](https://gbmortgages.gettrail.com/base/complaint?Id=1187-17813).\n2. We will acknowledge your complaint in writing within 24 hours, let you know who is handling it, and give you the contact details for our external dispute resolution scheme, Financial Services Complaints Limited (\"FSCL\").\n3. We will look into it, may ask you for more information, and aim to resolve it within 7 working days. If we need longer, we will tell you why and keep you updated.\n4. If you are not happy with our response, you can contact our external dispute resolution scheme (below)."
+    },
+    {
+      "title": "Our external complaints process",
+      "body": "If we cannot resolve your complaint, or you would rather not use our internal process, you can contact our external dispute resolution scheme, FSCL. This service costs you nothing and is independent of us.\n\nOur FSCL membership number is 9784.\n\nYou can contact FSCL at:\n\n- Address: PO Box 5967, Wellington 6140\n- Phone: 0800 347 257\n- Email: complaints@fscl.org.nz\n- Website: www.fscl.org.nz"
+    },
+    {
+      "title": "Professional indemnity insurance",
+      "body": "GB Mortgages Limited holds professional indemnity insurance, as required by our aggregator and lender agreements."
     },
     {
       "title": "Reliability history",
-      "body": "A reliability event is something that could affect your decision to use me, like legal proceedings or a bankruptcy in the last four years. [Confirm: neither Philippa Impey nor GB Mortgages has been subject to a reliability event.]"
-    },
-    {
-      "title": "My duties to you",
-      "body": "Under the Financial Markets Conduct Act 2013, anyone giving financial advice has to:\n\n- Give priority to your interests, and take all reasonable steps to make sure my advice isn't materially influenced by my own interests\n- Exercise care, diligence and skill\n- Meet the standards of competence, knowledge and skill in the Code of Professional Conduct for Financial Advice Services\n- Meet the standards of ethical behaviour, conduct and client care in the Code\n\nThat's a summary. There's more on the FMA website at [fma.govt.nz](https://www.fma.govt.nz), or just ask me."
-    },
-    {
-      "title": "If something's not right",
-      "body": "Tell me. I'd rather know, and I'll deal with it properly.\n\n- Email your complaint to [complaints contact / email]\n- I'll acknowledge it within [x] working days\n- I'll aim to resolve it within [x] working days, and keep you updated if it takes longer\n\nIf we can't sort it out between us, you can go to the independent dispute resolution scheme [scheme name, e.g. Financial Services Complaints Limited (FSCL)]. It costs you nothing. Contact: [scheme address, phone, email]."
+      "body": "Neither GB Mortgages Limited nor Philippa Impey has been subject to a reliability event (for example, legal proceedings or insolvency) that might materially influence your decision to use our services."
     }
   ]
 }
