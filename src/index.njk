@@ -34,6 +34,23 @@ permalink: /
   </div>
 </section>
 
+<!-- 1a. Lender strip -->
+{%- if lenders.show_strip %}
+<section class="overflow-hidden bg-[#064530] text-[#F4F1EA]" aria-label="{{ lenders.label }}">
+  <div class="mx-auto max-w-[1440px] px-5 pt-8 sm:px-10 lg:pt-10">{{ eyebrow(lenders.label, "text-[#C9D2C9]") | safe }}</div>
+  <div class="lender-marquee py-8 lg:py-10">
+    <ul class="lender-track" role="list">
+      {%- for copy in [0, 1, 2] %}{% for l in lenders.items %}{% if l.show %}
+      <li class="flex h-10 shrink-0 items-center px-8 sm:px-12"{% if copy > 0 %} aria-hidden="true"{% endif %}>
+        {%- if l.logo %}<img src="{{ l.logo }}" alt="{{ l.name }}" class="lender-logo h-8 w-auto max-w-[150px] object-contain" loading="lazy">
+        {%- else %}<span class="whitespace-nowrap text-lg font-semibold tracking-tight text-[#F4F1EA] sm:text-xl">{{ l.name }}</span>{% endif %}
+      </li>
+      {%- endif %}{% endfor %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
 <!-- 2. The whole picture -->
 <section id="approach" class="mx-auto max-w-[1440px] scroll-mt-20 px-5 py-24 sm:px-10 lg:py-40">
   <div class="grid gap-16 lg:grid-cols-12">
