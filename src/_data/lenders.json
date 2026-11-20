@@ -1,0 +1,61 @@
+{
+  "show_strip": true,
+  "label": "Lenders I work with",
+  "items": [
+    {
+      "name": "ANZ",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "ASB",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "BNZ",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "The Co-operative Bank",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Avanti Finance",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Basecorp",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Liberty",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Pepper Money",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Unity",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Vincent Capital",
+      "logo": "",
+      "show": true
+    },
+    {
+      "name": "Westpac",
+      "logo": "",
+      "show": false
+    }
+  ]
+}
