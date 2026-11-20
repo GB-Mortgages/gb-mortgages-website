@@ -69,23 +69,6 @@ collections:
           - { label: "Name card, name", name: "card_name", widget: "string" }
           - { label: "Name card, text", name: "card_text", widget: "text" }
 
-      - label: "1a. Lender strip (green band under the hero)"
-        name: "lenders"
-        file: "src/_data/lenders.json"
-        format: "json"
-        fields:
-          - { label: "Show the lender strip", name: "show_strip", widget: "boolean", default: true }
-          - { label: "Small label", name: "label", widget: "string" }
-          - label: "Lenders"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.name}}"
-            hint: "Drag to change the order. Untick Show to hide a lender without deleting it."
-            fields:
-              - { label: "Lender name", name: "name", widget: "string" }
-              - { label: "Logo", name: "logo", widget: "image", required: false, choose_url: false, hint: "PNG or SVG with a transparent background. It shows in white automatically. With no logo, the name shows in white text." }
-              - { label: "Show", name: "show", widget: "boolean", default: true }
-
       - label: "2. The whole picture"
         name: "approach"
         file: "src/_data/approach.json"
@@ -190,7 +173,7 @@ collections:
             widget: "list"
             summary: "{{fields.figure}}"
             fields:
-              - { label: "Figure", name: "figure", widget: "string" }
+              - { label: "Figure", name: "figure", widget: "string", hint: "Type {lenders} to show the number of lenders switched on in the lender strip. It updates on its own." }
               - { label: "Text", name: "text", widget: "string" }
           - { label: "Values, title", name: "values_title", widget: "string" }
           - label: "Values"
@@ -201,6 +184,23 @@ collections:
               - { label: "Word", name: "word", widget: "string" }
               - { label: "Line", name: "line", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
+
+      - label: "6a. Lender strip (green panel under the About me facts)"
+        name: "lenders"
+        file: "src/_data/lenders.json"
+        format: "json"
+        fields:
+          - { label: "Show the lender strip", name: "show_strip", widget: "boolean", default: true }
+          - { label: "Small label", name: "label", widget: "string" }
+          - label: "Lenders"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            hint: "Drag to change the order. Untick Show to hide a lender without deleting it."
+            fields:
+              - { label: "Lender name", name: "name", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false, choose_url: false, hint: "PNG or SVG with a transparent background. It shows in white automatically. With no logo, the name shows in white text." }
+              - { label: "Show", name: "show", widget: "boolean", default: true }
 
       - label: "7. For accountants and lawyers"
         name: "referrers"
