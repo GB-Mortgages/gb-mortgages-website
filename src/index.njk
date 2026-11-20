@@ -34,23 +34,6 @@ permalink: /
   </div>
 </section>
 
-<!-- 1a. Lender strip -->
-{%- if lenders.show_strip %}
-<section class="overflow-hidden bg-[#064530] text-[#F4F1EA]" aria-label="{{ lenders.label }}">
-  <div class="mx-auto max-w-[1440px] px-5 pt-8 sm:px-10 lg:pt-10">{{ eyebrow(lenders.label, "text-[#C9D2C9]") | safe }}</div>
-  <div class="lender-marquee py-8 lg:py-10">
-    <ul class="lender-track" role="list">
-      {%- for copy in [0, 1, 2] %}{% for l in lenders.items %}{% if l.show %}
-      <li class="flex h-10 shrink-0 items-center px-8 sm:px-12"{% if copy > 0 %} aria-hidden="true"{% endif %}>
-        {%- if l.logo %}<img src="{{ l.logo }}" alt="{{ l.name }}" class="lender-logo h-8 w-auto max-w-[150px] object-contain" loading="lazy">
-        {%- else %}<span class="whitespace-nowrap text-lg font-semibold tracking-tight text-[#F4F1EA] sm:text-xl">{{ l.name }}</span>{% endif %}
-      </li>
-      {%- endif %}{% endfor %}{% endfor %}
-    </ul>
-  </div>
-</section>
-{%- endif %}
-
 <!-- 2. The whole picture -->
 <section id="approach" class="mx-auto max-w-[1440px] scroll-mt-20 px-5 py-24 sm:px-10 lg:py-40">
   <div class="grid gap-16 lg:grid-cols-12">
@@ -253,6 +236,7 @@ permalink: /
 </section>
 
 <!-- 6. About me -->
+{%- set lenderCount = lenders.items | selectattr("show") | length %}
 <section id="about" class="scroll-mt-16 border-t border-[#D3CCBD] bg-[#EAE5DA]/50">
   <div class="mx-auto grid max-w-[1440px] gap-14 px-5 py-24 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:py-36">
     <div class="lg:col-span-5">
@@ -270,9 +254,24 @@ permalink: /
       </div>
       <div class="mt-12 grid grid-cols-2 gap-px border border-[#D3CCBD] bg-[#D3CCBD] md:grid-cols-4">
         {%- for s in about.stats %}
-        <div class="bg-[#F4F1EA] p-5"><p class="text-2xl font-semibold tracking-tight text-[#064530]">{{ s.figure }}</p><p class="mt-2 text-[13px] leading-snug text-[#4F5B53]">{{ s.text | t | safe }}</p></div>
+        <div class="bg-[#F4F1EA] p-5"><p class="text-2xl font-semibold tracking-tight text-[#064530]">{{ s.figure | replace("{lenders}", lenderCount) }}</p><p class="mt-2 text-[13px] leading-snug text-[#4F5B53]">{{ s.text | t | safe }}</p></div>
         {%- endfor %}
       </div>
+      {%- if lenders.show_strip %}
+      <div class="mt-px overflow-hidden border border-[#064530] bg-[#064530] text-[#F4F1EA]" aria-label="{{ lenders.label }}" role="region">
+        <div class="px-5 pt-5 sm:px-6">{{ eyebrow(lenders.label, "text-[#C9D2C9]") | safe }}</div>
+        <div class="lender-marquee py-6">
+          <ul class="lender-track" role="list">
+            {%- for copy in [0, 1, 2] %}{% for l in lenders.items %}{% if l.show %}
+            <li class="flex h-9 shrink-0 items-center px-6 sm:px-8"{% if copy > 0 %} aria-hidden="true"{% endif %}>
+              {%- if l.logo %}<img src="{{ l.logo }}" alt="{{ l.name }}" class="lender-logo h-7 w-auto max-w-[130px] object-contain" loading="lazy">
+              {%- else %}<span class="whitespace-nowrap text-base font-semibold tracking-tight text-[#F4F1EA] sm:text-lg">{{ l.name }}</span>{% endif %}
+            </li>
+            {%- endif %}{% endfor %}{% endfor %}
+          </ul>
+        </div>
+      </div>
+      {%- endif %}
       <p class="mt-14 text-xs font-medium uppercase tracking-[0.22em] text-[#4C6B55]">{{ about.values_title }}</p>
       <div class="mt-6 grid gap-8 sm:grid-cols-2">
         {%- for val in about.values %}
