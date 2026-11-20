@@ -50,3 +50,15 @@ button:focus-visible, a:focus-visible, .field:focus-visible { outline: 2px solid
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .carousel-dot { width: 10px; height: 10px; border-radius: 9999px; background: #D3CCBD; transition: background-color .2s, width .2s; }
 .carousel-dot[aria-current="true"] { width: 28px; background: #064530; }
+
+/* Lender strip: a slow, continuous scroll of lender logos. Pauses on hover; still for reduced motion. */
+.lender-marquee { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+.lender-track { display: flex; width: max-content; margin: 0; padding: 0; list-style: none; animation: lender-scroll 45s linear infinite; }
+.lender-marquee:hover .lender-track { animation-play-state: paused; }
+.lender-logo { filter: brightness(0) invert(1); }
+@keyframes lender-scroll { to { transform: translateX(-33.3333%); } }
+@media (prefers-reduced-motion: reduce) {
+  .lender-marquee { -webkit-mask-image: none; mask-image: none; }
+  .lender-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; row-gap: 1rem; }
+  .lender-track li[aria-hidden="true"] { display: none; }
+}
