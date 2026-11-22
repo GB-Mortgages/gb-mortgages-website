@@ -1,23 +1,5 @@
 {
-  "url": "https://www.gbmortgages.co.nz",
-  "business_name": "GB Mortgages",
-  "tagline": "Your lending, sorted.",
   "adviser_name": "Philippa Impey",
-  "email": "philly@gbmortgages.co.nz",
-  "phone": "+64 27 424 5544",
-  "location": "Queenstown, New Zealand",
-  "areas_served": [
-    "Queenstown",
-    "Arrowtown",
-    "Wānaka",
-    "Cromwell",
-    "Central Otago"
-  ],
-  "fsp_number": "FSP1013396",
-  "seo_title": "Mortgage Adviser Queenstown | Business, Home and Investment Lending | GB Mortgages",
-  "seo_description": "Philippa Impey is a Queenstown mortgage adviser with over 15 years in banking. Business, home and investment lending, planned together and taken to the right lender.",
-  "footer_blurb": "Over 15 years in banking across property and business lending. Now she looks after yours.",
-  "footer_legal": "GB Mortgages Limited (FSP1013399, NZBN 9429053746016) holds a Financial Advice Provider licence issued by the Financial Markets Authority. Financial adviser: Philippa Impey (FSP1013396). Lending is subject to lender criteria.",
   "nav": [
     {
       "label": "Business owners",
@@ -41,5 +23,23 @@
     }
   ],
   "header_button": "Talk to Philippa",
-  "google_analytics_id": ""
+  "fsp_number": "FSP1013396",
+  "business_name": "GB Mortgages",
+  "areas_served": [
+    "Queenstown",
+    "Arrowtown",
+    "Wānaka",
+    "Cromwell",
+    "Central Otago"
+  ],
+  "phone": "+64 27 424 5544",
+  "tagline": "Your lending, sorted.",
+  "url": "https://www.gbmortgages.co.nz",
+  "footer_legal": "GB Mortgages Limited (FSP1013399, NZBN 9429053746016) holds a Financial Advice Provider licence issued by the Financial Markets Authority. Financial adviser: Philippa Impey (FSP1013396). Lending is subject to lender criteria.",
+  "location": "Queenstown, New Zealand",
+  "seo_title": "Mortgage Adviser Queenstown | Business, Home and Investment Lending | GB Mortgages",
+  "footer_blurb": "Over 15 years in banking across property and business lending. Now she looks after yours.",
+  "google_analytics_id": "G-2KWBNDLVNP",
+  "seo_description": "Philippa Impey is a Queenstown mortgage adviser with over 15 years in banking. Business, home and investment lending, planned together and taken to the right lender.",
+  "email": "philly@gbmortgages.co.nz"
 }
