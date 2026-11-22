@@ -30,8 +30,8 @@ auth:
 local_backend: true
 
 # Change both to https://www.gbmortgages.co.nz when the domain is connected.
-site_url: https://gb-mortgages.netlify.app
-display_url: https://gb-mortgages.netlify.app
+site_url: https://www.gbmortgages.co.nz
+display_url: https://www.gbmortgages.co.nz
 logo_url: /images/logo-main.png
 locale: en
 
