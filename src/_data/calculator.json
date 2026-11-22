@@ -1,16 +1,16 @@
 {
-  "eyebrow": "Mortgage calculator",
-  "heading": "Run the numbers before you commit.",
-  "intro": "A quick guide for your next purchase or business move. I'll show you what a lender will actually look at.",
-  "default_price": 2290000,
   "default_deposit": 665000,
-  "default_rate": 5.5,
+  "chart_heading": "Your loan balance over time",
+  "heading": "Run the numbers before you commit.",
+  "eyebrow": "Mortgage calculator",
   "default_term": 30,
-  "default_frequency": "monthly",
-  "default_type": "interest_only",
-  "default_io_years": 3,
+  "default_price": 2290000,
+  "intro": "A quick guide for your next purchase or business move. I'll show you what a lender will actually look at.",
   "default_extra": 100,
   "button": "Talk these numbers through",
-  "chart_heading": "Your loan balance over time",
-  "disclaimer": "Indicative only. Not a loan offer. Lenders assess servicing at higher test rates."
+  "default_type": "interest_only",
+  "disclaimer": "Indicative only. Not a loan offer. Lenders assess servicing at higher test rates.",
+  "default_io_years": 3,
+  "default_rate": 5,
+  "default_frequency": "monthly"
 }
