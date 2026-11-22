@@ -31,7 +31,8 @@
   "email": {{ site.email | json | safe }},
   "telephone": {{ site.phone | json | safe }},
   "description": {{ site.seo_description | json | safe }},
-  "address": { "@type": "PostalAddress", "addressLocality": "Queenstown", "addressRegion": "Otago", "addressCountry": "NZ" },
+  "address": { "@type": "PostalAddress", "streetAddress": {{ site.street_address | json | safe }}, "addressLocality": "Queenstown", "postalCode": {{ site.postcode | json | safe }}, "addressRegion": "Otago", "addressCountry": "NZ" },
+  "sameAs": [{% if site.linkedin_url %}{{ site.linkedin_url | json | safe }}{% endif %}{% if site.linkedin_url and site.google_business_url %}, {% endif %}{% if site.google_business_url %}{{ site.google_business_url | json | safe }}{% endif %}],
   "areaServed": {{ site.areas_served | json | safe }},
   "founder": { "@type": "Person", "name": {{ site.adviser_name | json | safe }}, "jobTitle": "Mortgage adviser" }
 }
