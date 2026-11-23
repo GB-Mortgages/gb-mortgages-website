@@ -5,7 +5,7 @@
   "eyebrow": "Mortgage calculator",
   "default_term": 30,
   "default_price": 2290000,
-  "intro": "A quick guide for your next purchase or business move. I'll show you what a lender will actually look at.",
+  "intro": "A quick guide for your next purchase or business move. Have a play with the calculator here and see how lenders would generally see it. Then book a call with me and I'll show you how to best structure it and what a lender will actually look at.",
   "default_extra": 100,
   "button": "Talk these numbers through",
   "default_type": "interest_only",
