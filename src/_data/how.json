@@ -1,7 +1,11 @@
 {
   "eyebrow": "How I work",
-  "heading": { "text": "Friendly enough to trust.", "accent": "Sharp enough to push", "full_stop": true },
-  "intro": "I plan the structure, prepare the numbers and make your case to the right lender. Then I stay across it as things change.",
+  "heading": {
+    "text": "Friendly enough to trust.",
+    "accent": "Sharp enough to push",
+    "full_stop": true
+  },
+  "intro": "I understand your position, then I plan the structure, prepare the numbers and make your best case to the right lender. Then I stay across it as things change and close the deal.",
   "steps": [
     {
       "label": "Know the whole picture",
