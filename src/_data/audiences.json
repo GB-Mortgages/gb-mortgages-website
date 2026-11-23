@@ -1,6 +1,10 @@
 {
   "eyebrow": "Who I work with",
-  "heading": { "text": "You make the moves.", "accent": "I'll sort the lending", "full_stop": true },
+  "heading": {
+    "text": "You make the moves.",
+    "accent": "I'll sort the lending",
+    "full_stop": true
+  },
   "intro": "I keep a small client list, by choice. Most are one of two kinds of people, and both have lending that's more connected than it first looks.",
   "business": {
     "title": "Business owners",
@@ -16,7 +20,7 @@
     "list_two": [
       "Get to know how your business actually works",
       "Structure company, trust and personal borrowing together",
-      "Prepare the numbers and make your case to the right lender",
+      "Prepare the numbers and make your best case to the right lender",
       "Keep things moving and tell you what happens next"
     ],
     "button": "Talk through your next move"
