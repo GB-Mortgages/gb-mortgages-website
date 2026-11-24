@@ -309,6 +309,28 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [] }
 
+  - name: "faqs"
+    label: "FAQ page"
+    editor: { preview: false }
+    files:
+      - label: "FAQ page"
+        name: "faqs"
+        file: "src/_data/faqs.json"
+        format: "json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading (a yellow full stop is added)", name: "heading", widget: "text" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Search engine title", name: "seo_title", widget: "string" }
+          - { label: "Search engine description", name: "seo_description", widget: "text" }
+          - label: "Questions (numbered automatically)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [] }
+
   - name: "settings"
     label: "Contact details and settings"
     editor: { preview: false }
