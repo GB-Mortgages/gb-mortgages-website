@@ -238,7 +238,7 @@ permalink: /
 <!-- 6. About me -->
 {%- set lenderCount = lenders.items | selectattr("show") | length %}
 <section id="about" class="scroll-mt-16 border-t border-[#D3CCBD] bg-[#EAE5DA]/50">
-  <div class="mx-auto grid max-w-[1440px] gap-14 px-5 py-24 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:py-36">
+  <div class="mx-auto grid max-w-[1440px] gap-14 px-5 pt-24 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:pt-36">
     <div class="lg:col-span-5">
       <div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden bg-[#064530]">
         <img alt="{{ about.photo_alt }}" class="h-full w-full object-cover object-top" src="{{ about.photo }}" loading="lazy">
@@ -252,32 +252,39 @@ permalink: /
         <p>{{ p | t | safe }}</p>
         {%- endfor %}
       </div>
-      <div class="mt-12 grid grid-cols-2 gap-px border border-[#D3CCBD] bg-[#D3CCBD] md:grid-cols-4">
-        {%- for s in about.stats %}
-        <div class="bg-[#F4F1EA] p-5"><p class="text-2xl font-semibold tracking-tight text-[#064530]">{{ s.figure | replace("{lenders}", lenderCount) }}</p><p class="mt-2 text-[13px] leading-snug text-[#4F5B53]">{{ s.text | t | safe }}</p></div>
-        {%- endfor %}
-      </div>
-      {%- if lenders.show_strip %}
-      <div class="mt-px overflow-hidden border border-[#064530] bg-[#064530] text-[#F4F1EA]" aria-label="{{ lenders.label }}" role="region">
-        <div class="px-5 pt-5 sm:px-6">{{ eyebrow(lenders.label, "text-[#C9D2C9]") | safe }}</div>
-        <div class="lender-marquee py-6">
-          <ul class="lender-track" role="list">
-            {%- for copy in [0, 1, 2] %}{% for l in lenders.items %}{% if l.show %}
-            <li class="flex h-9 shrink-0 items-center px-6 sm:px-8"{% if copy > 0 %} aria-hidden="true"{% endif %}>
-              {%- if l.logo %}<img src="{{ l.logo }}" alt="{{ l.name }}" class="lender-logo h-7 w-auto max-w-[130px] object-contain" loading="lazy">
-              {%- else %}<span class="whitespace-nowrap text-base font-semibold tracking-tight text-[#F4F1EA] sm:text-lg">{{ l.name }}</span>{% endif %}
-            </li>
-            {%- endif %}{% endfor %}{% endfor %}
-          </ul>
-        </div>
-      </div>
-      {%- endif %}
-      <p class="mt-14 text-xs font-medium uppercase tracking-[0.22em] text-[#4C6B55]">{{ about.values_title }}</p>
-      <div class="mt-6 grid gap-8 sm:grid-cols-2">
-        {%- for val in about.values %}
-        <div class="border-t border-[#064530]/15 pt-5"><p class="font-display text-2xl font-semibold text-[#064530]">{{ val.word }}<span class="text-[#F2B705]">.</span></p><p class="mt-2 font-medium text-[#064530]">{{ val.line | t | safe }}</p><p class="mt-2 text-[15px] leading-relaxed text-[#4F5B53]">{{ val.text | t | safe }}</p></div>
-        {%- endfor %}
-      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-16 max-w-[1440px] px-5 sm:px-10 lg:mt-24">
+    <div class="grid grid-cols-2 gap-px border border-[#D3CCBD] bg-[#D3CCBD] md:grid-cols-4">
+      {%- for s in about.stats %}
+      <div class="bg-[#F4F1EA] p-6 sm:p-8"><p class="font-display text-3xl font-semibold tracking-tight text-[#064530] sm:text-4xl">{{ s.figure | replace("{lenders}", lenderCount) }}</p><p class="mt-3 text-sm leading-snug text-[#4F5B53]">{{ s.text | t | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+
+  {%- if lenders.show_strip %}
+  <div class="mt-24 bg-[#064530] text-[#F4F1EA] lg:mt-36" aria-label="{{ lenders.label }}" role="region">
+    <div class="mx-auto max-w-[1440px] px-5 pt-20 sm:px-10">{{ eyebrow(lenders.label, "text-[#C9D2C9]") | safe }}</div>
+    <div class="lender-marquee py-14 sm:py-20">
+      <ul class="lender-track" role="list">
+        {%- for copy in [0, 1, 2] %}{% for l in lenders.items %}{% if l.show %}
+        <li class="flex h-16 shrink-0 items-center px-10 sm:h-20 sm:px-14"{% if copy > 0 %} aria-hidden="true"{% endif %}>
+          {%- if l.logo %}<img src="{{ l.logo }}" alt="{{ l.name }}" class="lender-logo h-10 w-auto max-w-[200px] object-contain sm:h-12" loading="lazy">
+          {%- else %}<span class="whitespace-nowrap font-display text-2xl font-semibold tracking-tight text-[#F4F1EA] sm:text-3xl">{{ l.name }}</span>{% endif %}
+        </li>
+        {%- endif %}{% endfor %}{% endfor %}
+      </ul>
+    </div>
+  </div>
+  {%- endif %}
+
+  <div class="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:py-36">
+    <p class="text-xs font-medium uppercase tracking-[0.22em] text-[#4C6B55]">{{ about.values_title }}</p>
+    <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {%- for val in about.values %}
+      <div class="border-t border-[#064530]/15 pt-6"><p class="font-display text-2xl font-semibold text-[#064530]">{{ val.word }}<span class="text-[#F2B705]">.</span></p><p class="mt-2 font-medium text-[#064530]">{{ val.line | t | safe }}</p><p class="mt-2 text-[15px] leading-relaxed text-[#4F5B53]">{{ val.text | t | safe }}</p></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
